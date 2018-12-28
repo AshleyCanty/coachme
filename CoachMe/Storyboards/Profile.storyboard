@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Profile View Controller-->
+        <scene sceneID="Kuc-Vd-Muu">
+            <objects>
+                <viewController storyboardIdentifier="UserProfileViewController" id="FSZ-5F-34y" customClass="UserProfileViewController" customModule="CoachMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ah8-nu-NNT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="200" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dur-XW-wjy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifier" rowHeight="160" id="Otd-5F-03A" customClass="UserCustomTableViewCell" customModule="CoachMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Otd-5F-03A" id="o68-Fh-u0I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEC-QX-Mdg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IFD-Dh-tPX">
+                                                    <rect key="frame" x="0.0" y="20.5" width="375" height="139"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimllit anim id est laborum. </string>
+                                                    <color key="textColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27167452966589595" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AEC-QX-Mdg" firstAttribute="leading" secondItem="o68-Fh-u0I" secondAttribute="leading" id="2Ob-mI-ACf"/>
+                                                <constraint firstItem="IFD-Dh-tPX" firstAttribute="leading" secondItem="o68-Fh-u0I" secondAttribute="leading" id="2Qz-Ho-Aav"/>
+                                                <constraint firstAttribute="bottom" secondItem="IFD-Dh-tPX" secondAttribute="bottom" id="G89-pl-fSX"/>
+                                                <constraint firstAttribute="trailing" secondItem="IFD-Dh-tPX" secondAttribute="trailing" id="KoY-0b-RBl"/>
+                                                <constraint firstItem="IFD-Dh-tPX" firstAttribute="top" secondItem="AEC-QX-Mdg" secondAttribute="bottom" id="PIz-KY-y9x"/>
+                                                <constraint firstAttribute="trailing" secondItem="AEC-QX-Mdg" secondAttribute="trailing" id="pVA-Sf-hKn"/>
+                                                <constraint firstItem="AEC-QX-Mdg" firstAttribute="top" secondItem="o68-Fh-u0I" secondAttribute="top" id="wWx-i5-wmv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="AEC-QX-Mdg" id="hjf-GL-qLJ"/>
+                                            <outlet property="textView" destination="IFD-Dh-tPX" id="z2t-ZV-14u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FSZ-5F-34y" id="0eR-Hn-Yac"/>
+                                    <outlet property="delegate" destination="FSZ-5F-34y" id="jIE-rM-ntH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dur-XW-wjy" firstAttribute="trailing" secondItem="K4C-f3-TGL" secondAttribute="trailing" id="1Mp-Zl-sGy"/>
+                            <constraint firstItem="Dur-XW-wjy" firstAttribute="bottom" secondItem="K4C-f3-TGL" secondAttribute="bottom" id="LdL-E3-Q7j"/>
+                            <constraint firstItem="Dur-XW-wjy" firstAttribute="top" secondItem="K4C-f3-TGL" secondAttribute="top" id="NI8-dP-tvy"/>
+                            <constraint firstItem="Dur-XW-wjy" firstAttribute="leading" secondItem="K4C-f3-TGL" secondAttribute="leading" id="dLv-JC-wsI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K4C-f3-TGL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xyw-0F-Xew"/>
+                    <connections>
+                        <outlet property="tableView" destination="Dur-XW-wjy" id="3ZQ-J5-u5W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyD-H5-yOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-340" y="-89.505247376311857"/>
+        </scene>
+    </scenes>
+</document>
