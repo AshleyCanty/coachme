@@ -41,7 +41,6 @@ class SignupThreeViewController: UIViewController, UIImagePickerControllerDelega
         imagePickerController.allowsEditing = true
         
         let actionSheet = UIAlertController(title: "Photo source", message: "Choose a source", preferredStyle: .actionSheet)
-        
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action:UIAlertAction) in
             
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -60,15 +59,12 @@ class SignupThreeViewController: UIViewController, UIImagePickerControllerDelega
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
-        
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
         present(actionSheet, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        
         circleImage.image = image
         picker.dismiss(animated: true, completion: nil)
     }

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2412E12521CAEDC800575EAC /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412E12321CAEDC800575EAC /* WriteReviewViewController.swift */; };
-		2412E12621CAEDC800575EAC /* WriteReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2412E12421CAEDC800575EAC /* WriteReviewViewController.xib */; };
 		24153DAE21C2064B003D81F4 /* UserIntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24153DAC21C2064B003D81F4 /* UserIntroTableViewCell.swift */; };
 		24153DAF21C2064B003D81F4 /* UserIntroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24153DAD21C2064B003D81F4 /* UserIntroTableViewCell.xib */; };
 		241C426121C720AC00DAAB23 /* StringStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C426021C720AC00DAAB23 /* StringStructs.swift */; };
@@ -24,7 +22,7 @@
 		2440407E21C09E2C001DA314 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440407D21C09E2C001DA314 /* Helpers.swift */; };
 		244910E121C84ABF000E2C06 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244910E021C84ABF000E2C06 /* Reviews.swift */; };
 		244910E321C84E27000E2C06 /* ReviewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244910E221C84E27000E2C06 /* ReviewsData.swift */; };
-		244A9CE521D35E08003F2ACF /* SeeReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A9CE321D35E08003F2ACF /* SeeReviewsViewController.swift */; };
+		244A9CE521D35E08003F2ACF /* SeeAllReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A9CE321D35E08003F2ACF /* SeeAllReviewsViewController.swift */; };
 		2468801921B5B57900E7392B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2468801821B5B57900E7392B /* Launch Screen.storyboard */; };
 		246EC93821C2CA7F0010742B /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246EC93621C2CA7F0010742B /* ReviewsTableViewCell.swift */; };
 		246EC93921C2CA7F0010742B /* ReviewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246EC93721C2CA7F0010742B /* ReviewsTableViewCell.xib */; };
@@ -36,7 +34,6 @@
 		249D9BAE21C4D95400FE31C1 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249D9BAC21C4D95400FE31C1 /* PhotosTableViewCell.swift */; };
 		249D9BAF21C4D95400FE31C1 /* PhotosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249D9BAD21C4D95400FE31C1 /* PhotosTableViewCell.xib */; };
 		249E615821BCD0B600A994FF /* StaticStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E615721BCD0B600A994FF /* StaticStrings.swift */; };
-		249E615A21BCD74C00A994FF /* StringFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E615921BCD74C00A994FF /* StringFunctions.swift */; };
 		249E615D21BD75FA00A994FF /* Homescreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 249E615C21BD75FA00A994FF /* Homescreen.storyboard */; };
 		249E616121BD76C300A994FF /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E616021BD76C300A994FF /* UserProfileViewController.swift */; };
 		24AF4F7D21D29391001E3AC1 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AF4F7B21D29391001E3AC1 /* LoadingCell.swift */; };
@@ -44,17 +41,21 @@
 		24B022A921CA039000E36143 /* AddReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B022A721CA039000E36143 /* AddReviewTableViewCell.swift */; };
 		24B022AA21CA039000E36143 /* AddReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B022A821CA039000E36143 /* AddReviewTableViewCell.xib */; };
 		24C7C2A021C1F11700262C58 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C29F21C1F11700262C58 /* UserInfo.swift */; };
-		24C7C2A221C1F34400262C58 /* UserCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C2A121C1F34400262C58 /* UserCustomTableViewCell.swift */; };
 		24C7C2A721C1F46400262C58 /* AboutMeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C7C2A621C1F46400262C58 /* AboutMeViewCell.xib */; };
 		24C7C2AE21C1F80800262C58 /* AboutMeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C7C2AC21C1F80800262C58 /* AboutMeViewCell.swift */; };
 		24E34DF521B50F2100D33D2F /* SignupOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E34DF421B50F2100D33D2F /* SignupOneViewController.swift */; };
+		24EA597A21D72EFD000421F1 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA597821D72EFD000421F1 /* VideoTableViewCell.swift */; };
+		24EA597B21D72EFD000421F1 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24EA597921D72EFD000421F1 /* VideoTableViewCell.xib */; };
+		24EA597D21D7327A000421F1 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 24EA597C21D7327A000421F1 /* video.mp4 */; };
+		24EA597F21D85BE0000421F1 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA597E21D85BE0000421F1 /* AddReviewView.swift */; };
+		24EA598321D88E53000421F1 /* UserProfileTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA598221D88E53000421F1 /* UserProfileTableDataSource.swift */; };
+		24EA598521D88E90000421F1 /* UserProfileTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA598421D88E90000421F1 /* UserProfileTableDelegate.swift */; };
+		24EA599121D89703000421F1 /* UserProfileTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA599021D89703000421F1 /* UserProfileTableCells.swift */; };
 		72C4A8AD279D5B686796D641 /* Pods_CoachMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A456F24069528B2E0D0BD7D /* Pods_CoachMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A456F24069528B2E0D0BD7D /* Pods_CoachMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoachMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2412E12321CAEDC800575EAC /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
-		2412E12421CAEDC800575EAC /* WriteReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteReviewViewController.xib; sourceTree = "<group>"; };
 		24153DAC21C2064B003D81F4 /* UserIntroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIntroTableViewCell.swift; sourceTree = "<group>"; };
 		24153DAD21C2064B003D81F4 /* UserIntroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserIntroTableViewCell.xib; sourceTree = "<group>"; };
 		241C426021C720AC00DAAB23 /* StringStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringStructs.swift; sourceTree = "<group>"; };
@@ -70,7 +71,7 @@
 		2440407D21C09E2C001DA314 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		244910E021C84ABF000E2C06 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		244910E221C84E27000E2C06 /* ReviewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsData.swift; sourceTree = "<group>"; };
-		244A9CE321D35E08003F2ACF /* SeeReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeReviewsViewController.swift; sourceTree = "<group>"; };
+		244A9CE321D35E08003F2ACF /* SeeAllReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllReviewsViewController.swift; sourceTree = "<group>"; };
 		2468801821B5B57900E7392B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		246EC93621C2CA7F0010742B /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
 		246EC93721C2CA7F0010742B /* ReviewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		249D9BAC21C4D95400FE31C1 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		249D9BAD21C4D95400FE31C1 /* PhotosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosTableViewCell.xib; sourceTree = "<group>"; };
 		249E615721BCD0B600A994FF /* StaticStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticStrings.swift; sourceTree = "<group>"; };
-		249E615921BCD74C00A994FF /* StringFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFunctions.swift; sourceTree = "<group>"; };
 		249E615C21BD75FA00A994FF /* Homescreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Homescreen.storyboard; sourceTree = "<group>"; };
 		249E616021BD76C300A994FF /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		24AF4F7B21D29391001E3AC1 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
@@ -92,10 +92,16 @@
 		24B022A721CA039000E36143 /* AddReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewTableViewCell.swift; sourceTree = "<group>"; };
 		24B022A821CA039000E36143 /* AddReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReviewTableViewCell.xib; sourceTree = "<group>"; };
 		24C7C29F21C1F11700262C58 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		24C7C2A121C1F34400262C58 /* UserCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCustomTableViewCell.swift; sourceTree = "<group>"; };
 		24C7C2A621C1F46400262C58 /* AboutMeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutMeViewCell.xib; sourceTree = "<group>"; };
 		24C7C2AC21C1F80800262C58 /* AboutMeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewCell.swift; sourceTree = "<group>"; };
 		24E34DF421B50F2100D33D2F /* SignupOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupOneViewController.swift; sourceTree = "<group>"; };
+		24EA597821D72EFD000421F1 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		24EA597921D72EFD000421F1 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		24EA597C21D7327A000421F1 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		24EA597E21D85BE0000421F1 /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
+		24EA598221D88E53000421F1 /* UserProfileTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableDataSource.swift; sourceTree = "<group>"; };
+		24EA598421D88E90000421F1 /* UserProfileTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableDelegate.swift; sourceTree = "<group>"; };
+		24EA599021D89703000421F1 /* UserProfileTableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableCells.swift; sourceTree = "<group>"; };
 		615194CA022C6773D5A0C180 /* Pods-CoachMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachMe.debug.xcconfig"; path = "Target Support Files/Pods-CoachMe/Pods-CoachMe.debug.xcconfig"; sourceTree = "<group>"; };
 		C764E57803784BF5EFF537A5 /* Pods-CoachMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachMe.release.xcconfig"; path = "Target Support Files/Pods-CoachMe/Pods-CoachMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,57 +154,49 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		244910DA21C81A83000E2C06 /* ReviewsView */ = {
+		244910DA21C81A83000E2C06 /* ReviewsTab */ = {
 			isa = PBXGroup;
 			children = (
-				246EC93621C2CA7F0010742B /* ReviewsTableViewCell.swift */,
-				246EC93721C2CA7F0010742B /* ReviewsTableViewCell.xib */,
-				24B022A721CA039000E36143 /* AddReviewTableViewCell.swift */,
-				24B022A821CA039000E36143 /* AddReviewTableViewCell.xib */,
-				2412E12321CAEDC800575EAC /* WriteReviewViewController.swift */,
-				2412E12421CAEDC800575EAC /* WriteReviewViewController.xib */,
-				244A9CE321D35E08003F2ACF /* SeeReviewsViewController.swift */,
-				243E993321D449C100DE48E5 /* SeeMoreTableViewCell.swift */,
-				243E993421D449C100DE48E5 /* SeeMoreTableViewCell.xib */,
+				24EA597E21D85BE0000421F1 /* AddReviewView.swift */,
+				244A9CE321D35E08003F2ACF /* SeeAllReviewsViewController.swift */,
+				24EA598721D89069000421F1 /* Nibs */,
 			);
-			path = ReviewsView;
+			path = ReviewsTab;
 			sourceTree = "<group>";
 		};
-		244910DB21C81AC1000E2C06 /* PhotosView */ = {
+		244910DB21C81AC1000E2C06 /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
 				243E993B21D48AC700DE48E5 /* PhotosCollectionViewController.swift */,
 				243E993D21D535B800DE48E5 /* PhotosCollectionViewCell.swift */,
 			);
-			path = PhotosView;
+			path = PhotoGallery;
 			sourceTree = "<group>";
 		};
-		244910DC21C81ADF000E2C06 /* ServicesView */ = {
+		244910DC21C81ADF000E2C06 /* ServicesTab */ = {
 			isa = PBXGroup;
 			children = (
 				243E993721D4664F00DE48E5 /* ServicesTableViewCell.swift */,
 				243E993821D4664F00DE48E5 /* ServicesTableViewCell.xib */,
 			);
-			path = ServicesView;
+			path = ServicesTab;
 			sourceTree = "<group>";
 		};
-		244910DD21C81B39000E2C06 /* ProfileView */ = {
+		244910DD21C81B39000E2C06 /* ProfileTab */ = {
 			isa = PBXGroup;
 			children = (
-				24153DAC21C2064B003D81F4 /* UserIntroTableViewCell.swift */,
-				24153DAD21C2064B003D81F4 /* UserIntroTableViewCell.xib */,
-				249D9BAC21C4D95400FE31C1 /* PhotosTableViewCell.swift */,
-				249D9BAD21C4D95400FE31C1 /* PhotosTableViewCell.xib */,
-				24C7C2AC21C1F80800262C58 /* AboutMeViewCell.swift */,
-				24C7C2A621C1F46400262C58 /* AboutMeViewCell.xib */,
-				24C7C2A121C1F34400262C58 /* UserCustomTableViewCell.swift */,
+				24EA598921D8927F000421F1 /* Intro nib */,
+				24EA598821D89260000421F1 /* AboutMe nib */,
+				24EA598A21D8928E000421F1 /* Video nib */,
+				24EA598B21D8929A000421F1 /* Photos nib */,
 			);
-			path = ProfileView;
+			path = ProfileTab;
 			sourceTree = "<group>";
 		};
 		24776B6121A28534002933DA = {
 			isa = PBXGroup;
 			children = (
+				24EA597C21D7327A000421F1 /* video.mp4 */,
 				24776B6C21A28534002933DA /* CoachMe */,
 				24776B6B21A28534002933DA /* Products */,
 				58224D96C70E1B53EAC4AB23 /* Pods */,
@@ -217,7 +215,7 @@
 		24776B6C21A28534002933DA /* CoachMe */ = {
 			isa = PBXGroup;
 			children = (
-				24776B6D21A28534002933DA /* AppDelegate.swift */,
+				24EA598D21D895FF000421F1 /* AppDelegate */,
 				2440407C21C09E11001DA314 /* Helpers */,
 				24C7C29E21C1F0D100262C58 /* Models */,
 				249E615F21BD76A500A994FF /* ViewControllers */,
@@ -233,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				249E615721BCD0B600A994FF /* StaticStrings.swift */,
-				249E615921BCD74C00A994FF /* StringFunctions.swift */,
 				241C426021C720AC00DAAB23 /* StringStructs.swift */,
 				244910E221C84E27000E2C06 /* ReviewsData.swift */,
 			);
@@ -264,7 +261,7 @@
 			children = (
 				24AF4F7A21D29367001E3AC1 /* UIActivityIndicators */,
 				249E615E21BD767300A994FF /* Authentication */,
-				249E616321BD76F800A994FF /* Profile */,
+				249E616321BD76F800A994FF /* Homescreen */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -277,13 +274,12 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		249E616321BD76F800A994FF /* Profile */ = {
+		249E616321BD76F800A994FF /* Homescreen */ = {
 			isa = PBXGroup;
 			children = (
-				249E616021BD76C300A994FF /* UserProfileViewController.swift */,
-				24C7C2A321C1F38100262C58 /* UserProfileViews */,
+				24EA598C21D8953D000421F1 /* UserProfile */,
 			);
-			path = Profile;
+			path = Homescreen;
 			sourceTree = "<group>";
 		};
 		24AF4F7A21D29367001E3AC1 /* UIActivityIndicators */ = {
@@ -307,12 +303,89 @@
 		24C7C2A321C1F38100262C58 /* UserProfileViews */ = {
 			isa = PBXGroup;
 			children = (
-				244910DD21C81B39000E2C06 /* ProfileView */,
-				244910DB21C81AC1000E2C06 /* PhotosView */,
-				244910DC21C81ADF000E2C06 /* ServicesView */,
-				244910DA21C81A83000E2C06 /* ReviewsView */,
+				244910DD21C81B39000E2C06 /* ProfileTab */,
+				244910DC21C81ADF000E2C06 /* ServicesTab */,
+				244910DA21C81A83000E2C06 /* ReviewsTab */,
+				244910DB21C81AC1000E2C06 /* PhotoGallery */,
 			);
 			path = UserProfileViews;
+			sourceTree = "<group>";
+		};
+		24EA598621D88FE0000421F1 /* UserProfileTableHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				24EA598221D88E53000421F1 /* UserProfileTableDataSource.swift */,
+				24EA599021D89703000421F1 /* UserProfileTableCells.swift */,
+				24EA598421D88E90000421F1 /* UserProfileTableDelegate.swift */,
+			);
+			path = UserProfileTableHandlers;
+			sourceTree = "<group>";
+		};
+		24EA598721D89069000421F1 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				246EC93621C2CA7F0010742B /* ReviewsTableViewCell.swift */,
+				246EC93721C2CA7F0010742B /* ReviewsTableViewCell.xib */,
+				24B022A721CA039000E36143 /* AddReviewTableViewCell.swift */,
+				24B022A821CA039000E36143 /* AddReviewTableViewCell.xib */,
+				243E993321D449C100DE48E5 /* SeeMoreTableViewCell.swift */,
+				243E993421D449C100DE48E5 /* SeeMoreTableViewCell.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		24EA598821D89260000421F1 /* AboutMe nib */ = {
+			isa = PBXGroup;
+			children = (
+				24C7C2AC21C1F80800262C58 /* AboutMeViewCell.swift */,
+				24C7C2A621C1F46400262C58 /* AboutMeViewCell.xib */,
+			);
+			path = "AboutMe nib";
+			sourceTree = "<group>";
+		};
+		24EA598921D8927F000421F1 /* Intro nib */ = {
+			isa = PBXGroup;
+			children = (
+				24153DAD21C2064B003D81F4 /* UserIntroTableViewCell.xib */,
+				24153DAC21C2064B003D81F4 /* UserIntroTableViewCell.swift */,
+			);
+			path = "Intro nib";
+			sourceTree = "<group>";
+		};
+		24EA598A21D8928E000421F1 /* Video nib */ = {
+			isa = PBXGroup;
+			children = (
+				24EA597921D72EFD000421F1 /* VideoTableViewCell.xib */,
+				24EA597821D72EFD000421F1 /* VideoTableViewCell.swift */,
+			);
+			path = "Video nib";
+			sourceTree = "<group>";
+		};
+		24EA598B21D8929A000421F1 /* Photos nib */ = {
+			isa = PBXGroup;
+			children = (
+				249D9BAC21C4D95400FE31C1 /* PhotosTableViewCell.swift */,
+				249D9BAD21C4D95400FE31C1 /* PhotosTableViewCell.xib */,
+			);
+			path = "Photos nib";
+			sourceTree = "<group>";
+		};
+		24EA598C21D8953D000421F1 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				249E616021BD76C300A994FF /* UserProfileViewController.swift */,
+				24C7C2A321C1F38100262C58 /* UserProfileViews */,
+				24EA598621D88FE0000421F1 /* UserProfileTableHandlers */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		24EA598D21D895FF000421F1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				24776B6D21A28534002933DA /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		58224D96C70E1B53EAC4AB23 /* Pods */ = {
@@ -392,11 +465,12 @@
 				246EC93921C2CA7F0010742B /* ReviewsTableViewCell.xib in Resources */,
 				24C7C2A721C1F46400262C58 /* AboutMeViewCell.xib in Resources */,
 				249D9BAF21C4D95400FE31C1 /* PhotosTableViewCell.xib in Resources */,
+				24EA597B21D72EFD000421F1 /* VideoTableViewCell.xib in Resources */,
 				243E993621D449C100DE48E5 /* SeeMoreTableViewCell.xib in Resources */,
 				249E615D21BD75FA00A994FF /* Homescreen.storyboard in Resources */,
 				24776B7521A28536002933DA /* Assets.xcassets in Resources */,
+				24EA597D21D7327A000421F1 /* video.mp4 in Resources */,
 				2468801921B5B57900E7392B /* Launch Screen.storyboard in Resources */,
-				2412E12621CAEDC800575EAC /* WriteReviewViewController.xib in Resources */,
 				24776B7321A28535002933DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,29 +543,31 @@
 				246EC93821C2CA7F0010742B /* ReviewsTableViewCell.swift in Sources */,
 				243E993E21D535B800DE48E5 /* PhotosCollectionViewCell.swift in Sources */,
 				24AF4F7D21D29391001E3AC1 /* LoadingCell.swift in Sources */,
-				249E615A21BCD74C00A994FF /* StringFunctions.swift in Sources */,
+				24EA599121D89703000421F1 /* UserProfileTableCells.swift in Sources */,
 				24153DAE21C2064B003D81F4 /* UserIntroTableViewCell.swift in Sources */,
-				24C7C2A221C1F34400262C58 /* UserCustomTableViewCell.swift in Sources */,
 				249D9BAE21C4D95400FE31C1 /* PhotosTableViewCell.swift in Sources */,
 				249E616121BD76C300A994FF /* UserProfileViewController.swift in Sources */,
+				24EA597A21D72EFD000421F1 /* VideoTableViewCell.swift in Sources */,
 				243E993521D449C100DE48E5 /* SeeMoreTableViewCell.swift in Sources */,
 				24776B7021A28535002933DA /* LoginViewController.swift in Sources */,
+				24EA598521D88E90000421F1 /* UserProfileTableDelegate.swift in Sources */,
 				243E993921D4664F00DE48E5 /* ServicesTableViewCell.swift in Sources */,
 				2440407E21C09E2C001DA314 /* Helpers.swift in Sources */,
 				24B022A921CA039000E36143 /* AddReviewTableViewCell.swift in Sources */,
 				243E993C21D48AC700DE48E5 /* PhotosCollectionViewController.swift in Sources */,
+				24EA598321D88E53000421F1 /* UserProfileTableDataSource.swift in Sources */,
 				24C7C2A021C1F11700262C58 /* UserInfo.swift in Sources */,
 				241CF53521B5CD9700B9FA31 /* Colors.swift in Sources */,
 				241C426121C720AC00DAAB23 /* StringStructs.swift in Sources */,
-				2412E12521CAEDC800575EAC /* WriteReviewViewController.swift in Sources */,
 				249E615821BCD0B600A994FF /* StaticStrings.swift in Sources */,
 				24776B6E21A28534002933DA /* AppDelegate.swift in Sources */,
 				244910E321C84E27000E2C06 /* ReviewsData.swift in Sources */,
 				24C7C2AE21C1F80800262C58 /* AboutMeViewCell.swift in Sources */,
 				243E21D921B8D9EB00A7820F /* SignupThreeViewController.swift in Sources */,
-				244A9CE521D35E08003F2ACF /* SeeReviewsViewController.swift in Sources */,
+				244A9CE521D35E08003F2ACF /* SeeAllReviewsViewController.swift in Sources */,
 				24E34DF521B50F2100D33D2F /* SignupOneViewController.swift in Sources */,
 				243E21D621B8B5CD00A7820F /* SignupTwoViewController.swift in Sources */,
+				24EA597F21D85BE0000421F1 /* AddReviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

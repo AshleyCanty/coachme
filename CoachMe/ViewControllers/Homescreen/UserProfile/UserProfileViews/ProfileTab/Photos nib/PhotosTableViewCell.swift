@@ -16,7 +16,7 @@ class PhotosTableViewCell: UITableViewCell {
     @IBOutlet weak var imgThree: UIImageView!
     @IBOutlet weak var imgFour: UIImageView!
     @IBOutlet weak var view: UIView!
-    let photosCellHeight = CGFloat(integerLiteral: 430)
+    let photosCellHeight = CGFloat(integerLiteral: 453)
     
     
 

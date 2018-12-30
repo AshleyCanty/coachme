@@ -12,6 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    var window = UIWindow(frame: UIScreen.main.bounds)
     var items = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     var images = ["angela-pushup", "reese", "tyson", "coach1", "usher", "coach2", "tyson-situp", "tyson-squat", "coach3"]
     
@@ -23,6 +24,10 @@ class PhotosCollectionViewController: UICollectionViewController, UICollectionVi
 
     }
     
+    @IBAction func showImage(_ sender: Any) {
+        
+        
+    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -33,13 +38,42 @@ class PhotosCollectionViewController: UICollectionViewController, UICollectionVi
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotosCollectionViewCell
         let currentImg = UIImage(named: images[indexPath.row])
-        cell.img.image = currentImg
+        let btn = UIButton(type: .custom)
+        
+        btn.frame = CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height)
+        btn.setImage(currentImg, for: .normal)
+        btn.backgroundColor = UIColor.red
+        btn.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+        btn.addTarget(self, action: #selector(tappedImage(_:)), for: .touchUpInside)
+        cell.addSubview(btn)
         
         return cell
     }
     
+    @objc func tappedImage(_ sender: UIButton) {
+        if let imageView = sender.imageView {
+            let newImageView = UIImageView(image: imageView.image)
+            newImageView.frame = UIScreen.main.bounds
+            newImageView.backgroundColor = UIColor.black
+            newImageView.contentMode = .scaleAspectFit
+            newImageView.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissScreen))
+            tap.delegate = self as? UIGestureRecognizerDelegate
+            newImageView.addGestureRecognizer(tap)
+            
+            view.addSubview(newImageView)
+            navigationController?.isNavigationBarHidden = true
+            tabBarController?.tabBar.isHidden = true
+        }
+    }
+    
+    @objc func dismissScreen(_ sender: UITapGestureRecognizer) {
+        navigationController?.isNavigationBarHidden = false
+        tabBarController?.tabBar.isHidden = false
+        sender.view?.removeFromSuperview()
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -58,7 +92,6 @@ class PhotosCollectionViewController: UICollectionViewController, UICollectionVi
 
         let numberOfItemsPerRow = 3.0
         let itemWidth = Double(collectionView.bounds.width - layout.minimumLineSpacing)/numberOfItemsPerRow
-        print(layout.itemSize)
         return CGSize(width: itemWidth, height: itemWidth)
     }
     

@@ -7,8 +7,32 @@
 //
 
 import UIKit
+import WebKit
+import AVKit
 
 class Helpers: UIView {
+    
+    
+    func createCustomVideo(_ videoId: String) -> AVPlayerViewController {
+        let videoPlayer = AVPlayerViewController()
+        if let path = Bundle.main.path(forResource: videoId, ofType: "mp4"){
+            let video = AVPlayer(url: URL(fileURLWithPath: path))
+            videoPlayer.player = video
+//            self.present(videoPlayer, animated: true, completion: {
+//                video.play()
+//            })
+        }
+        return videoPlayer
+    }
+    
+    func createYoutubeVideo(_ webview: WKWebView,_ videoCode: String){
+        let url = URL(string: "https:www.youtube.com/embed/\(videoCode)")
+        
+        webview.backgroundColor = UIColor.black
+        webview.isOpaque = false
+        webview.addShadows()
+        webview.load(URLRequest(url: url!))
+    }
     
     
     func setProfileTab(_ value: String, _ key: String) {
@@ -103,6 +127,8 @@ extension UITextView {
         }
     }
 }
+
+
 
 extension UIButton {
     

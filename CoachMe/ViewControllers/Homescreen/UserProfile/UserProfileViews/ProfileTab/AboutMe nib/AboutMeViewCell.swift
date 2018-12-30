@@ -13,12 +13,12 @@ class AboutMeViewCell: UITableViewCell {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var view: UIView!
-    let aboutCellHeight = CGFloat(integerLiteral: 200)
+    let aboutCellHeight = CGFloat(integerLiteral: 180)
     
     override func awakeFromNib() {
         super.awakeFromNib()
         print(view.bounds.height)
-//        textView.addCharacterSpacing()
+        textView.isEditable = false
         view.addShadows()
     }
 

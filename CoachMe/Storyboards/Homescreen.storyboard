@@ -54,7 +54,7 @@
                                                     <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IFD-Dh-tPX">
-                                                    <rect key="frame" x="0.0" y="20.5" width="375" height="139"/>
+                                                    <rect key="frame" x="0.0" y="20.5" width="375" height="139.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimllit anim id est laborum. </string>
                                                     <color key="textColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27167452966589595" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="-340" y="-89.505247376311857"/>
         </scene>
-        <!--See Reviews View Controller-->
+        <!--See All Reviews View Controller-->
         <scene sceneID="5Uw-XQ-Rje">
             <objects>
-                <tableViewController storyboardIdentifier="SeeReviewsViewController" id="Z2p-qU-V3a" customClass="SeeReviewsViewController" customModule="CoachMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SeeAllReviewsViewController" id="Z2p-qU-V3a" customClass="SeeAllReviewsViewController" customModule="CoachMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="3eZ-cJ-YiT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +142,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlM-Fi-mg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="314" y="-93"/>
+            <point key="canvasLocation" x="404" y="-475"/>
         </scene>
         <!--Photos Collection View Controller-->
         <scene sceneID="1uO-Zb-T5o">
@@ -165,24 +165,8 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tft-NE-XzV">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                        </imageView>
-                                    </subviews>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="Tft-NE-XzV" firstAttribute="centerY" secondItem="O81-lg-pKG" secondAttribute="centerY" id="GIn-Hp-552"/>
-                                    <constraint firstItem="Tft-NE-XzV" firstAttribute="leading" secondItem="O81-lg-pKG" secondAttribute="leading" id="Q3a-fD-SMH"/>
-                                    <constraint firstItem="Tft-NE-XzV" firstAttribute="centerX" secondItem="O81-lg-pKG" secondAttribute="centerX" id="elq-KE-Bmt"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tft-NE-XzV" secondAttribute="trailing" id="hNM-yG-cnH"/>
-                                    <constraint firstAttribute="bottom" secondItem="Tft-NE-XzV" secondAttribute="bottom" id="hhG-1g-Tcc"/>
-                                    <constraint firstItem="Tft-NE-XzV" firstAttribute="top" secondItem="O81-lg-pKG" secondAttribute="top" id="qOa-hp-SEm"/>
-                                </constraints>
                                 <size key="customSize" width="120" height="120"/>
-                                <connections>
-                                    <outlet property="img" destination="Tft-NE-XzV" id="BFo-US-piG"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -193,7 +177,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXC-Wt-a4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975.20000000000005" y="-90.404797601199405"/>
+            <point key="canvasLocation" x="404" y="284"/>
         </scene>
     </scenes>
 </document>

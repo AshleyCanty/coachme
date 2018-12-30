@@ -15,6 +15,8 @@ class StaticStrings {
     static let mentee = "Mentee"
     static let selectRole = "Select a role"
     static let joinNow = "Join at no cost and see what opportunities await you!"
+    static let bio = "Bio"
+    static let emptySection = "This user has not yet written here."
     static let name = "name"
     static let email = "Email Address"
     static let number = "Phone number"
@@ -24,12 +26,11 @@ class StaticStrings {
     static let next = "Continue"
     static let register = "Register"
     static let addPhoto = "Add a photo"
-
+    static let LeaveReview = "Leave a review (optional)."
     static let SeeReviewsButton = "See all reviews"
-    static let AboutMe = "About me"
-    static let EmptySection = "This user has not yet written here."
+    
     static let headlines = [
-        Headline(title: "About me", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id ornare tortor, quis dictum enim. Morbi convallis tincidunt quam eget bibendum. Suspendisse malesuada maximus ante, at molestie massa fringilla id."),
+        Headline(title: "About me", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id ornare tortor, quis dictum enim. Morbi convallis tincidunt quam eget bibendum. Suspendisse malesuada maximus ante, at molestie massa fringilla id sdksfv sdiiif seifjs sifjef sn."),
         Headline(title: "Joey Rockout", text: "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id ornare tortor, quis dictum enim. Morbi convallis tincidunt quam eget bibendum. Suspendisse malesuada maximus ante, at molestie massa fringilla id.\""),
         Headline(title: "Photos", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id ornare tortor, quis dictum enim. Morbi convallis tincidunt quam eget bibendum. Suspendisse malesuada maximus ante, at molestie massa fringilla id.")
     ]

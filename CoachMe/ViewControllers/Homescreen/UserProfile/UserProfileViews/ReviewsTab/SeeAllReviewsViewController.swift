@@ -1,5 +1,5 @@
 //
-//  SeeReviewsViewController.swift
+//  SeeAllReviewsViewController.swift
 //  CoachMe
 //
 //  Created by ashley canty on 12/26/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SeeReviewsViewController: UITableViewController {
+class SeeAllReviewsViewController: UITableViewController {
     
 //    @IBOutlet weak var tableView: UITableView! {
 //        didSet {
