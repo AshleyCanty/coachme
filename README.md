@@ -1,2 +1,2 @@
 # coachme
-My first ios appp
+An intended to help people find nearby mentors.
