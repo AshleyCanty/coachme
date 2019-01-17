@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setAllText()
-        
+        navigationController?.navigationBar.tintColor = Colors().lightGreen
         UINavigationBar.appearance().barTintColor = Colors().darkGreyBackground
     }
     
@@ -38,6 +38,12 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
     }
+    
+    
+    @IBAction func shortcut(_ sender: Any) {
+        AppDelegate().loginNavigation(navigationController!)
+    }
+    
     
     @IBAction func startSignup(_ sender: Any) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupOneViewController") as! SignupOneViewController

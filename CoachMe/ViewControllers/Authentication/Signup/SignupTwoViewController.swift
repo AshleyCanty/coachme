@@ -37,7 +37,7 @@ class SignupTwoViewController: UIViewController {
     
     func setText(){
         signup.attributedText = Helpers().changeTextColor(NavigationTitles.Signup, "Sign", "up")
-        details.text = StaticStrings.joinNow
+        details.text = StaticStrings.AlmostThere
         
         name.layer.cornerRadius = 5
         name.layer.borderWidth = 1

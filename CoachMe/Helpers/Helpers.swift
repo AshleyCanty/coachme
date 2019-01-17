@@ -12,6 +12,14 @@ import AVKit
 
 class Helpers: UIView {
     
+    func createImages(_ imgNames: [String]) -> [UIImage]{
+        var imgArray = [UIImage]()
+        for i in 0..<imgNames.count {
+            let imgView = UIImage(imageLiteralResourceName: imgNames[i])
+            imgArray.append(imgView)
+        }
+        return imgArray
+    }
     
     func createCustomVideo(_ videoId: String) -> AVPlayerViewController {
         let videoPlayer = AVPlayerViewController()
@@ -64,8 +72,8 @@ class Helpers: UIView {
     }
     
     func makeRounded(_ image: UIImageView){
-//        image.layer.borderWidth = 1.5
-//        image.layer.borderColor = UIColor.white.cgColor
+        image.layer.borderWidth = 1.5
+        image.layer.borderColor = UIColor.white.cgColor
         image.layer.masksToBounds = false
         image.layer.cornerRadius = image.frame.width/2
         image.clipsToBounds = true
@@ -87,6 +95,38 @@ extension NSLayoutConstraint {
             print(num)
             constraints[num].isActive = status[num]
         }
+    }
+}
+
+extension UITextView {
+    func highlightInputBox() {
+        layer.masksToBounds = false
+        layer.shadowColor = Colors().lightGreen.cgColor
+        layer.shadowOffset = CGSize.zero
+        layer.shadowRadius = 6.0
+        layer.shadowOpacity = 0.6
+    }
+    
+    func removeHighlight() {
+        layer.masksToBounds = true
+        layer.shadowColor = UIColor.clear.cgColor
+        layer.shadowOpacity = 0
+    }
+}
+
+extension UITextField {
+    func highlightInputBox() {
+        layer.masksToBounds = false
+        layer.shadowColor = Colors().lightGreen.cgColor
+        layer.shadowOffset = CGSize.zero
+        layer.shadowRadius = 6.0
+        layer.shadowOpacity = 0.6
+    }
+    
+    func removeHighlight() {
+        layer.masksToBounds = true
+        layer.shadowColor = UIColor.clear.cgColor
+        layer.shadowOpacity = 0
     }
 }
 
@@ -137,7 +177,7 @@ extension UIButton {
     // uiview.animate to move border to each button
     
     func bottomBorder(){
-        var lineView = UIView(frame: CGRect(x: 0, y: frame.size.height, width: frame.size.width, height: 2))
+        let lineView = UIView(frame: CGRect(x: 0, y: frame.size.height, width: frame.size.width, height: 2))
         lineView.backgroundColor = UIColor.white
         addSubview(lineView)
 
@@ -157,12 +197,28 @@ extension UIButton {
             maskPath1 = UIBezierPath(roundedRect: bounds,
                                          byRoundingCorners: corners,
                                          cornerRadii: CGSize(width: 8, height: 8))
+            
         }
         
-        let maskLayer1 = CAShapeLayer()
-        maskLayer1.frame = bounds
-        maskLayer1.path = maskPath1.cgPath
-        layer.mask = maskLayer1
+        let rectShape = CAShapeLayer()
+        rectShape.bounds = frame
+        rectShape.position = center
+        rectShape.path = maskPath1.cgPath
+        clipsToBounds = true
+        layer.masksToBounds = true
+        
+        layer.mask = rectShape
+    }
+}
+
+extension UIImageView {
+    public func roundImageCorners(_ corners: UIRectCorner) {
+        let maskPath = UIBezierPath(roundedRect: bounds,
+                                    byRoundingCorners: corners,
+                                    cornerRadii: CGSize(width: 8, height: 8))
+        let shape = CAShapeLayer()
+        shape.path = maskPath.cgPath
+        layer.mask = shape
     }
 }
 
