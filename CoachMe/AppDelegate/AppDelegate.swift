@@ -22,11 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().layer.shadowColor = UIColor.clear.cgColor
         UINavigationBar.appearance().shadowImage = UIImage()
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Colors().darkGreyBackground], for: .selected)
+        UITabBar.appearance().backgroundColor = Colors().lightGreen
         application.statusBarStyle = .lightContent
-
         return true
+    }
+    
+    func loginNavigation(_ controller: UINavigationController) {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
+        let storyboard = UIStoryboard(name: "MainTab", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "MainTab") as! TabBarViewController
+//        controller.present(mainVC, animated: true, completion: nil)
+        controller.pushViewController(mainVC, animated: true)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -29,9 +29,7 @@ class SignupThreeViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func register(_ sender: Any) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Homescreen", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
-        navigationController?.pushViewController(vc, animated: true)
+        AppDelegate().loginNavigation(navigationController!)
     }
     
     @IBAction func addImage(_ sender: Any) {

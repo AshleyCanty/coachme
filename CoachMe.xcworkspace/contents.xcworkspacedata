@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CoachMe/Storyboards/Base.lproj/Authentication.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:CoachMe.xcodeproj">
    </FileRef>
    <FileRef
