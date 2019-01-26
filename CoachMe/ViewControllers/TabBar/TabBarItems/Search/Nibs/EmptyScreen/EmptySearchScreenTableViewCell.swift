@@ -1,24 +1,19 @@
 //
-//  SearchButtonTableViewCell.swift
+//  EmptySearchScreenTableViewCell.swift
 //  CoachMe
 //
-//  Created by ashley canty on 1/14/19.
+//  Created by ashley canty on 1/20/19.
 //  Copyright © 2019 ashley canty. All rights reserved.
 //
 
 import UIKit
 
-class SearchButtonTableViewCell: UITableViewCell {
+class EmptySearchScreenTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var beginSearch: UIButton!
     
-    @IBOutlet weak var updateButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
     
 
-    
-    @IBAction func buttonPressed(_ sender: Any) {
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

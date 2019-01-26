@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240AC0A021F4F91C001D6292 /* PopOverFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AC09F21F4F91C001D6292 /* PopOverFilterViewController.swift */; };
+		240AC0A421F50F00001D6292 /* EmptySearchScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AC0A221F50F00001D6292 /* EmptySearchScreenTableViewCell.swift */; };
+		240AC0A521F50F00001D6292 /* EmptySearchScreenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240AC0A321F50F00001D6292 /* EmptySearchScreenTableViewCell.xib */; };
+		240AC0A921F5196A001D6292 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AC0A821F5196A001D6292 /* SearchResultsViewController.swift */; };
 		24153DAE21C2064B003D81F4 /* UserIntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24153DAC21C2064B003D81F4 /* UserIntroTableViewCell.swift */; };
 		24153DAF21C2064B003D81F4 /* UserIntroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24153DAD21C2064B003D81F4 /* UserIntroTableViewCell.xib */; };
 		241C426121C720AC00DAAB23 /* StringStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241C426021C720AC00DAAB23 /* StringStructs.swift */; };
@@ -22,7 +26,6 @@
 		2440407E21C09E2C001DA314 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440407D21C09E2C001DA314 /* Helpers.swift */; };
 		244910E121C84ABF000E2C06 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244910E021C84ABF000E2C06 /* Reviews.swift */; };
 		244910E321C84E27000E2C06 /* ReviewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244910E221C84E27000E2C06 /* ReviewsData.swift */; };
-		244A233521EE54AE0093233B /* CustomInputBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A233421EE54AE0093233B /* CustomInputBox.swift */; };
 		244A233921EE7F380093233B /* SearchResultsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A233821EE7F380093233B /* SearchResultsCard.swift */; };
 		244A9CE521D35E08003F2ACF /* SeeAllReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A9CE321D35E08003F2ACF /* SeeAllReviewsViewController.swift */; };
 		244AA1FB21EB9412002A06F8 /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244AA1FA21EB9412002A06F8 /* CustomSearchTextField.swift */; };
@@ -42,6 +45,7 @@
 		245876FD21ED32EF009259A9 /* resultCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245876FB21ED32EF009259A9 /* resultCardTableViewCell.xib */; };
 		2458770021ED34E2009259A9 /* FilterSortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245876FE21ED34E2009259A9 /* FilterSortTableViewCell.swift */; };
 		2458770121ED34E2009259A9 /* FilterSortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245876FF21ED34E2009259A9 /* FilterSortTableViewCell.xib */; };
+		24590B7D21F443D900919B6F /* SpinnerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24590B7C21F443D900919B6F /* SpinnerExtension.swift */; };
 		2461B66E21E9B68C009BAB36 /* ServicesCounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2461B66C21E9B68C009BAB36 /* ServicesCounterTableViewCell.swift */; };
 		2461B66F21E9B68C009BAB36 /* ServicesCounterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2461B66D21E9B68C009BAB36 /* ServicesCounterTableViewCell.xib */; };
 		2461B67221E9B69B009BAB36 /* ServicesCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2461B67021E9B69B009BAB36 /* ServicesCardTableViewCell.swift */; };
@@ -91,12 +95,22 @@
 		24EA598521D88E90000421F1 /* UserProfileTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA598421D88E90000421F1 /* UserProfileTableDelegate.swift */; };
 		24EA599121D89703000421F1 /* UserProfileTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EA599021D89703000421F1 /* UserProfileTableCells.swift */; };
 		24EEE5ED21E155C2005B1E97 /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EEE5EC21E155C2005B1E97 /* AccountSettings.swift */; };
+		24F28D7521F2EE72008823FD /* PopoverSortScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F28D7421F2EE72008823FD /* PopoverSortScreenViewController.swift */; };
 		24F3BD4F21E3D46B00536CCF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3BD4E21E3D46A00536CCF /* TabBarViewController.swift */; };
+		24F6ACC421F7B4E300F50299 /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F6ACC321F7B4E300F50299 /* Inbox.storyboard */; };
+		24F6ACC621F7BAE100F50299 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6ACC521F7BAE100F50299 /* InboxViewController.swift */; };
+		24F6ACC921F7D16300F50299 /* InboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6ACC721F7D16300F50299 /* InboxTableViewCell.swift */; };
+		24F6ACCA21F7D16300F50299 /* InboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24F6ACC821F7D16300F50299 /* InboxTableViewCell.xib */; };
+		24F6ACCC21F821A500F50299 /* MessageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6ACCB21F821A500F50299 /* MessageCard.swift */; };
 		72C4A8AD279D5B686796D641 /* Pods_CoachMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A456F24069528B2E0D0BD7D /* Pods_CoachMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A456F24069528B2E0D0BD7D /* Pods_CoachMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoachMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		240AC09F21F4F91C001D6292 /* PopOverFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverFilterViewController.swift; sourceTree = "<group>"; };
+		240AC0A221F50F00001D6292 /* EmptySearchScreenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchScreenTableViewCell.swift; sourceTree = "<group>"; };
+		240AC0A321F50F00001D6292 /* EmptySearchScreenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptySearchScreenTableViewCell.xib; sourceTree = "<group>"; };
+		240AC0A821F5196A001D6292 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		24153DAC21C2064B003D81F4 /* UserIntroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIntroTableViewCell.swift; sourceTree = "<group>"; };
 		24153DAD21C2064B003D81F4 /* UserIntroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserIntroTableViewCell.xib; sourceTree = "<group>"; };
 		241C426021C720AC00DAAB23 /* StringStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringStructs.swift; sourceTree = "<group>"; };
@@ -112,7 +126,6 @@
 		2440407D21C09E2C001DA314 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		244910E021C84ABF000E2C06 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		244910E221C84E27000E2C06 /* ReviewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsData.swift; sourceTree = "<group>"; };
-		244A233421EE54AE0093233B /* CustomInputBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputBox.swift; sourceTree = "<group>"; };
 		244A233821EE7F380093233B /* SearchResultsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCard.swift; sourceTree = "<group>"; };
 		244A9CE321D35E08003F2ACF /* SeeAllReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllReviewsViewController.swift; sourceTree = "<group>"; };
 		244AA1FA21EB9412002A06F8 /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
@@ -132,6 +145,7 @@
 		245876FB21ED32EF009259A9 /* resultCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = resultCardTableViewCell.xib; sourceTree = "<group>"; };
 		245876FE21ED34E2009259A9 /* FilterSortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSortTableViewCell.swift; sourceTree = "<group>"; };
 		245876FF21ED34E2009259A9 /* FilterSortTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSortTableViewCell.xib; sourceTree = "<group>"; };
+		24590B7C21F443D900919B6F /* SpinnerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerExtension.swift; sourceTree = "<group>"; };
 		2461B66C21E9B68C009BAB36 /* ServicesCounterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCounterTableViewCell.swift; sourceTree = "<group>"; };
 		2461B66D21E9B68C009BAB36 /* ServicesCounterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesCounterTableViewCell.xib; sourceTree = "<group>"; };
 		2461B67021E9B69B009BAB36 /* ServicesCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCardTableViewCell.swift; sourceTree = "<group>"; };
@@ -183,7 +197,13 @@
 		24EA598421D88E90000421F1 /* UserProfileTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableDelegate.swift; sourceTree = "<group>"; };
 		24EA599021D89703000421F1 /* UserProfileTableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableCells.swift; sourceTree = "<group>"; };
 		24EEE5EC21E155C2005B1E97 /* AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
+		24F28D7421F2EE72008823FD /* PopoverSortScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSortScreenViewController.swift; sourceTree = "<group>"; };
 		24F3BD4E21E3D46A00536CCF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		24F6ACC321F7B4E300F50299 /* Inbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inbox.storyboard; sourceTree = "<group>"; };
+		24F6ACC521F7BAE100F50299 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
+		24F6ACC721F7D16300F50299 /* InboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxTableViewCell.swift; sourceTree = "<group>"; };
+		24F6ACC821F7D16300F50299 /* InboxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InboxTableViewCell.xib; sourceTree = "<group>"; };
+		24F6ACCB21F821A500F50299 /* MessageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCard.swift; sourceTree = "<group>"; };
 		615194CA022C6773D5A0C180 /* Pods-CoachMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachMe.debug.xcconfig"; path = "Target Support Files/Pods-CoachMe/Pods-CoachMe.debug.xcconfig"; sourceTree = "<group>"; };
 		C764E57803784BF5EFF537A5 /* Pods-CoachMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachMe.release.xcconfig"; path = "Target Support Files/Pods-CoachMe/Pods-CoachMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +226,32 @@
 				1A456F24069528B2E0D0BD7D /* Pods_CoachMe.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		240AC0A121F50ECE001D6292 /* EmptyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				240AC0A221F50F00001D6292 /* EmptySearchScreenTableViewCell.swift */,
+				240AC0A321F50F00001D6292 /* EmptySearchScreenTableViewCell.xib */,
+			);
+			path = EmptyScreen;
+			sourceTree = "<group>";
+		};
+		240AC0A621F518CF001D6292 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				24F28D7421F2EE72008823FD /* PopoverSortScreenViewController.swift */,
+				240AC09F21F4F91C001D6292 /* PopOverFilterViewController.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		240AC0A721F518FC001D6292 /* SearchResultsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				240AC0A821F5196A001D6292 /* SearchResultsViewController.swift */,
+			);
+			path = SearchResultsViewController;
 			sourceTree = "<group>";
 		};
 		241CF53321B5CD7400B9FA31 /* CoachMe Graphics */ = {
@@ -233,7 +279,6 @@
 				249E615621BCD06D00A994FF /* CoachMe Data */,
 				241CF53321B5CD7400B9FA31 /* CoachMe Graphics */,
 				244AA1FA21EB9412002A06F8 /* CustomSearchTextField.swift */,
-				244A233421EE54AE0093233B /* CustomInputBox.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -280,6 +325,7 @@
 		245876DC21ED04D9009259A9 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				240AC0A121F50ECE001D6292 /* EmptyScreen */,
 				245876F921ED326C009259A9 /* Results */,
 				245876F821ED324A009259A9 /* Filters */,
 			);
@@ -332,8 +378,8 @@
 		246A0DF621E4E9FC007090DE /* ServicesInformationNibs */ = {
 			isa = PBXGroup;
 			children = (
-				2461B66C21E9B68C009BAB36 /* ServicesCounterTableViewCell.swift */,
 				2461B66D21E9B68C009BAB36 /* ServicesCounterTableViewCell.xib */,
+				2461B66C21E9B68C009BAB36 /* ServicesCounterTableViewCell.swift */,
 				2461B67021E9B69B009BAB36 /* ServicesCardTableViewCell.swift */,
 				2461B67121E9B69B009BAB36 /* ServicesCardTableViewCell.xib */,
 				24AC7ABD21EB0F0D0008952B /* EmptyListTableViewCell.swift */,
@@ -364,6 +410,9 @@
 		246A0DFD21E4EE17007090DE /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
+				24F6ACC521F7BAE100F50299 /* InboxViewController.swift */,
+				24F6ACC721F7D16300F50299 /* InboxTableViewCell.swift */,
+				24F6ACC821F7D16300F50299 /* InboxTableViewCell.xib */,
 			);
 			path = Inbox;
 			sourceTree = "<group>";
@@ -372,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				245876DA21ED0402009259A9 /* SearchScreenViewController.swift */,
+				240AC0A721F518FC001D6292 /* SearchResultsViewController */,
 				245876ED21ED1367009259A9 /* SearchTableHandlers */,
 				245876DC21ED04D9009259A9 /* Nibs */,
 			);
@@ -453,6 +503,7 @@
 				246A0DFF21E4F4F6007090DE /* MainTab.storyboard */,
 				245876D621ECF8E1009259A9 /* AccountSettings.storyboard */,
 				245876D821ECFA01009259A9 /* SearchScreen.storyboard */,
+				24F6ACC321F7B4E300F50299 /* Inbox.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -473,6 +524,7 @@
 				24FB522521D8AC0F00A709AC /* TabBar */,
 				249E615E21BD767300A994FF /* Authentication */,
 				24EA598C21D8953D000421F1 /* UserProfile */,
+				240AC0A621F518CF001D6292 /* Modals */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -490,6 +542,7 @@
 			children = (
 				24AF4F7B21D29391001E3AC1 /* LoadingCell.swift */,
 				24AF4F7C21D29391001E3AC1 /* LoadingCell.xib */,
+				24590B7C21F443D900919B6F /* SpinnerExtension.swift */,
 			);
 			path = UIActivityIndicators;
 			sourceTree = "<group>";
@@ -501,6 +554,7 @@
 				244910E021C84ABF000E2C06 /* Reviews.swift */,
 				24AC7ABB21EAE4CB0008952B /* ServiceCardInfo.swift */,
 				244A233821EE7F380093233B /* SearchResultsCard.swift */,
+				24F6ACCB21F821A500F50299 /* MessageCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -708,6 +762,7 @@
 				243E993A21D4664F00DE48E5 /* ServicesTableViewCell.xib in Resources */,
 				245876F721ED1771009259A9 /* SearchButtonTableViewCell.xib in Resources */,
 				24776B8021A28865002933DA /* GoogleService-Info.plist in Resources */,
+				240AC0A521F50F00001D6292 /* EmptySearchScreenTableViewCell.xib in Resources */,
 				24AF4F7E21D29391001E3AC1 /* LoadingCell.xib in Resources */,
 				24D10E2A21E1B019006A0B64 /* AccountSettingsTableViewCell.xib in Resources */,
 				245876D921ECFA01009259A9 /* SearchScreen.storyboard in Resources */,
@@ -720,6 +775,8 @@
 				24C7C2A721C1F46400262C58 /* AboutMeViewCell.xib in Resources */,
 				2461B66F21E9B68C009BAB36 /* ServicesCounterTableViewCell.xib in Resources */,
 				245876D721ECF8E1009259A9 /* AccountSettings.storyboard in Resources */,
+				24F6ACCA21F7D16300F50299 /* InboxTableViewCell.xib in Resources */,
+				24F6ACC421F7B4E300F50299 /* Inbox.storyboard in Resources */,
 				249D9BAF21C4D95400FE31C1 /* PhotosTableViewCell.xib in Resources */,
 				246A0E1021E5088A007090DE /* SubmitTableViewCell.xib in Resources */,
 				24EA597B21D72EFD000421F1 /* VideoTableViewCell.xib in Resources */,
@@ -804,13 +861,16 @@
 				245876F121ED13BD009259A9 /* SearchTableCells.swift in Sources */,
 				246EC93821C2CA7F0010742B /* ReviewsTableViewCell.swift in Sources */,
 				243E993E21D535B800DE48E5 /* PhotosCollectionViewCell.swift in Sources */,
+				240AC0A421F50F00001D6292 /* EmptySearchScreenTableViewCell.swift in Sources */,
 				24F3BD4F21E3D46B00536CCF /* TabBarViewController.swift in Sources */,
 				245876EF21ED13AE009259A9 /* SearchTableDataSource.swift in Sources */,
 				24AF4F7D21D29391001E3AC1 /* LoadingCell.swift in Sources */,
 				24EA599121D89703000421F1 /* UserProfileTableCells.swift in Sources */,
+				24F6ACC621F7BAE100F50299 /* InboxViewController.swift in Sources */,
 				246A0E0B21E502A0007090DE /* BioTableViewCell.swift in Sources */,
 				24153DAE21C2064B003D81F4 /* UserIntroTableViewCell.swift in Sources */,
 				249D9BAE21C4D95400FE31C1 /* PhotosTableViewCell.swift in Sources */,
+				24F6ACCC21F821A500F50299 /* MessageCard.swift in Sources */,
 				249E616121BD76C300A994FF /* UserProfileViewController.swift in Sources */,
 				245876EB21ED065A009259A9 /* TypePriceTableViewCell.swift in Sources */,
 				24DC39CD21E6F0B2003AC1D0 /* AccountSettingsTableDelegate.swift in Sources */,
@@ -830,14 +890,17 @@
 				24EEE5ED21E155C2005B1E97 /* AccountSettings.swift in Sources */,
 				24DC39CF21E6F0C4003AC1D0 /* AccountSettingsTableCells.swift in Sources */,
 				2440407E21C09E2C001DA314 /* Helpers.swift in Sources */,
+				240AC0A021F4F91C001D6292 /* PopOverFilterViewController.swift in Sources */,
 				24AC7ABC21EAE4CB0008952B /* ServiceCardInfo.swift in Sources */,
 				24B022A921CA039000E36143 /* AddReviewTableViewCell.swift in Sources */,
 				246A0E0721E50275007090DE /* BasicInfoTableViewCell.swift in Sources */,
 				243E993C21D48AC700DE48E5 /* PhotosCollectionViewController.swift in Sources */,
+				24F6ACC921F7D16300F50299 /* InboxTableViewCell.swift in Sources */,
 				24EA598321D88E53000421F1 /* UserProfileTableDataSource.swift in Sources */,
 				24C7C2A021C1F11700262C58 /* UserInfo.swift in Sources */,
 				241CF53521B5CD9700B9FA31 /* Colors.swift in Sources */,
 				241C426121C720AC00DAAB23 /* StringStructs.swift in Sources */,
+				24F28D7521F2EE72008823FD /* PopoverSortScreenViewController.swift in Sources */,
 				249E615821BCD0B600A994FF /* StaticStrings.swift in Sources */,
 				246A0E0F21E5088A007090DE /* SubmitTableViewCell.swift in Sources */,
 				24AC7ABF21EB0F0D0008952B /* EmptyListTableViewCell.swift in Sources */,
@@ -848,9 +911,10 @@
 				243E21D921B8D9EB00A7820F /* SignupThreeViewController.swift in Sources */,
 				244A9CE521D35E08003F2ACF /* SeeAllReviewsViewController.swift in Sources */,
 				24E34DF521B50F2100D33D2F /* SignupOneViewController.swift in Sources */,
-				244A233521EE54AE0093233B /* CustomInputBox.swift in Sources */,
+				240AC0A921F5196A001D6292 /* SearchResultsViewController.swift in Sources */,
 				244A233921EE7F380093233B /* SearchResultsCard.swift in Sources */,
 				245876E721ED05DE009259A9 /* LocationInputTableViewCell.swift in Sources */,
+				24590B7D21F443D900919B6F /* SpinnerExtension.swift in Sources */,
 				243E21D621B8B5CD00A7820F /* SignupTwoViewController.swift in Sources */,
 				24EA597F21D85BE0000421F1 /* AddReviewView.swift in Sources */,
 			);

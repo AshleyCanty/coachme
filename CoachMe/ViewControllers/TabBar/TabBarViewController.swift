@@ -13,13 +13,16 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.backBarButtonItem = nil
+        self.navigationController?.navigationItem.hidesBackButton = true
         
         let storyboardOne = UIStoryboard(name: "UserProfile", bundle: nil)
         let homeView = storyboardOne.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
         addAttributes(homeView, UIImage(named: "home-white")!,UIImage(named: "home-grey")!)
 
-        let storyboardTwo = UIStoryboard(name: "UserProfile", bundle: nil)
-        let inboxView = storyboardTwo.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+        let storyboardTwo = UIStoryboard(name: "Inbox", bundle: nil)
+        let inboxView = storyboardTwo.instantiateViewController(withIdentifier: "InboxViewController") as! InboxViewController
         addAttributes(inboxView, UIImage(named: "inbox-white")!,UIImage(named: "inbox-grey")!)
         
         let storyboardThree = UIStoryboard(name: "SearchScreen", bundle: nil)

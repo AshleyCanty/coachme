@@ -13,28 +13,26 @@ class SearchScreenViewController: UIViewController {
     var animationFlag = true
     let userDefaults = UserDefaults.standard
     
-    @IBOutlet weak var tableView: UITableView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
-        // 0 = search filter, 1 = search filter
-        userDefaults.set(0, forKey: "searchScreenCells")
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(segueToSearch), name: NSNotification.Name(rawValue: "load"), object: nil)
+//
+//        // 0 = emptyScreen, 1 = searchResults
+        userDefaults.set(0, forKey: "searchScreen")
+
     }
     
-    func reloadTableData() {
-        tableView.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func segueToSearch() {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "SearchResultsViewController") {
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .overCurrentContext
+            self.definesPresentationContext = true
+            self.present(vc, animated: true, completion: nil)
+        }
     }
-    */
-
 }

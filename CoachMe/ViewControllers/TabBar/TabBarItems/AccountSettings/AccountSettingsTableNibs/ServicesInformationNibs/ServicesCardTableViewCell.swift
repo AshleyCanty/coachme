@@ -25,11 +25,15 @@ class ServicesCardTableViewCell: UITableViewCell {
             if editFlag == false {
                 editFlag = true
                 editButton.setImage(UIImage(named: "enabled"), for: .normal)
+                title.highlightInputBox()
+                rate.highlightInputBox()
                 title.isUserInteractionEnabled = true
                 rate.isUserInteractionEnabled = true
             } else {
                 editFlag = false
                 editButton.setImage(UIImage(named: "disabled"), for: .normal)
+                title.removeHighlight()
+                rate.removeHighlight()
                 title.isUserInteractionEnabled = false
                 rate.isUserInteractionEnabled = false
         }

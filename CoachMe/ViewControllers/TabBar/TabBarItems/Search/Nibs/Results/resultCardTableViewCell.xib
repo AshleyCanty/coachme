@@ -116,6 +116,34 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="M7p-46-Avz">
+                                        <rect key="frame" x="174.5" y="43" width="56" height="48.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting at:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGg-qk-eZm">
+                                                <rect key="frame" x="0.0" y="0.0" width="56" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pnO-sO-FHh">
+                                                <rect key="frame" x="8" y="15" width="48" height="33.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EML-n7-gKE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="12.5" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <color key="textColor" red="0.0" green="0.80392156859999997" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfa-gk-QQD">
+                                                        <rect key="frame" x="12.5" y="0.0" width="35.5" height="33.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                        <color key="textColor" red="0.0" green="0.80392156859999997" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -123,8 +151,10 @@
                                     <constraint firstItem="k0X-e2-827" firstAttribute="top" secondItem="YH7-yr-Mys" secondAttribute="bottom" constant="4" id="7aO-Oq-1Oa"/>
                                     <constraint firstItem="9lC-5B-jfG" firstAttribute="leading" secondItem="R1M-Wj-EH0" secondAttribute="leading" constant="8" id="F5C-84-BeF"/>
                                     <constraint firstItem="YH7-yr-Mys" firstAttribute="leading" secondItem="R1M-Wj-EH0" secondAttribute="leading" constant="8" id="IsF-KY-tPn"/>
+                                    <constraint firstItem="M7p-46-Avz" firstAttribute="centerY" secondItem="9lC-5B-jfG" secondAttribute="centerY" id="LIc-8a-atm"/>
                                     <constraint firstItem="9lC-5B-jfG" firstAttribute="top" secondItem="k0X-e2-827" secondAttribute="bottom" constant="12" id="M72-d1-pZy"/>
                                     <constraint firstItem="YH7-yr-Mys" firstAttribute="top" secondItem="R1M-Wj-EH0" secondAttribute="top" constant="8" id="NKz-a4-OaG"/>
+                                    <constraint firstAttribute="trailing" secondItem="M7p-46-Avz" secondAttribute="trailing" constant="12" id="O5f-H5-HJj"/>
                                     <constraint firstItem="oJG-Lq-5fn" firstAttribute="leading" secondItem="R1M-Wj-EH0" secondAttribute="leading" constant="8" id="aOx-qy-SGg"/>
                                     <constraint firstAttribute="bottom" secondItem="oJG-Lq-5fn" secondAttribute="bottom" id="o6c-8f-swA"/>
                                 </constraints>
@@ -164,6 +194,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="averageRating" destination="g3e-GY-blB" id="MZt-wr-87n"/>
+                <outlet property="baseRate" destination="Lfa-gk-QQD" id="dzs-oc-IvC"/>
                 <outlet property="firstname" destination="VVD-k2-NYV" id="gZR-JZ-hg4"/>
                 <outlet property="lastActive" destination="W25-6b-L89" id="tQX-LM-JXL"/>
                 <outlet property="lastname" destination="d5Z-Gf-7fC" id="d0A-Qs-Lyd"/>
@@ -176,7 +207,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="coach3" width="800" height="606"/>
+        <image name="coach3" width="550" height="336"/>
         <image name="emptyClearStar" width="21" height="20"/>
         <image name="fullStar" width="26" height="24"/>
     </resources>

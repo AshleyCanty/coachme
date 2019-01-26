@@ -18,7 +18,7 @@ class StaticStrings {
     static let bio = "Bio"
     static let emptySection = "This user has not yet written here."
     static let name = "name"
-    static let email = "Email Address"
+    static let email = "Email address"
     static let number = "Phone number"
     static let username = "Username"
     static let password = "Password"
@@ -41,17 +41,28 @@ class StaticStrings {
         Headline(title: "Photos", text: "I am not what I ought to be, I am not what I want to be, I am not what I hope to be in another world, but still, I am not what I once used to be, and by the grace of God I am what I am.r")
     ]
     
+    
     static var ServiceCard = [
         ServiceCardInfo(title: "Math", rate: "325"),
         ServiceCardInfo(title: "Throwing", rate: "50")
     ]
     
     static let SearchCard = [
-        SearchResultsCard(image: "coach1", firstname: "Tariq", lastname: "Domas", averageRating: "7.7", location: "Bronx, NY", lastActive: "Last active 1hrs ago"),
-        SearchResultsCard(image: "coach2", firstname: "Joel", lastname: "Souey", averageRating: "8.7", location: "Brooklyn, NY", lastActive: "Last active 3 days ago"),
-        SearchResultsCard(image: "usher", firstname: "Usher", lastname: "Raymond", averageRating: "9.0", location: "Los Angelos, CA", lastActive: "Last active 10 days ago"),
-        SearchResultsCard(image: "coach3", firstname: "Huey", lastname: "Nougat", averageRating: "8.7", location: "Atlantic City, NJ", lastActive: "Last active 4hrs ago")
+        SearchResultsCard(image: "coach1", firstname: "Tariq", lastname: "Domas", averageRating: "7.7", location: "Bronx, NY", lastActive: "Last active 1hrs ago", baseRate: "65"),
+        SearchResultsCard(image: "coach2", firstname: "Joel", lastname: "Souey", averageRating: "8.7", location: "Brooklyn, NY", lastActive: "Last active 3 days ago", baseRate: "50"),
+        SearchResultsCard(image: "usher", firstname: "Usher", lastname: "Raymond", averageRating: "9.0", location: "Los Angelos, CA", lastActive: "Last active 10 days ago", baseRate: "14"),
+        SearchResultsCard(image: "coach3", firstname: "Huey", lastname: "Nougat", averageRating: "8.7", location: "Atlantic City, NJ", lastActive: "Last active 4hrs ago", baseRate: "25")
     ]
+    
+    static let MessageCards = [
+        MessageCard(userImage: "coach2", username: "Joel Sally", message: "I ahve about three card to go", timestamp: "03:26", messageCounter: "2"),
+        MessageCard(userImage: "coach3", username: "Eazy-E", message: "Yeah homie, I'll be there soon", timestamp: "01:44", messageCounter: "1"),
+        MessageCard(userImage: "coach1", username: "Riding Hood", message: "I got three wolves at the house.", timestamp: "03:23", messageCounter: "1"),
+        MessageCard(userImage: "usher", username: "Inspektah Deck", message: "Who ate meff's veggie sandwhich, he's mad", timestamp: "11:30", messageCounter: "0")
+        
+    ]
+    
+
 }
 
 class NavigationTitles {

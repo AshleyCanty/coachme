@@ -16,6 +16,7 @@ class resultCardTableViewCell: UITableViewCell {
     @IBOutlet weak var lastname: UILabel!
     @IBOutlet weak var averageRating: UILabel!
     @IBOutlet weak var starRating: CosmosView!
+    @IBOutlet weak var baseRate: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var lastActive: UILabel!
     @IBOutlet weak var viewprofileButton: UIButton!

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 
@@ -16,7 +17,7 @@ class LoginViewController: UIViewController {
     var titleCenterYAnchor: NSLayoutConstraint?
     
     @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var loginButton: UIButton!
@@ -42,6 +43,33 @@ class LoginViewController: UIViewController {
     
     @IBAction func shortcut(_ sender: Any) {
         AppDelegate().loginNavigation(navigationController!)
+        guard let email = email.text, let password = password.text else {
+            print("Invalid input")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            guard let uid = user?.user.uid else {
+                return
+            }
+            
+            // Successfully authenticated user
+            let ref = Database.database().reference(fromURL: "https://coachme-c9e7e.firebaseio.com/")
+            let usersReference = ref.child("user").child(uid)
+            let values = ["email": email, "password": password]
+            usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                if err != nil {
+                    print(err)
+                    return
+                }
+                print("Successfully saved user to Firebase DB")
+            })
+        }
     }
     
     
@@ -53,10 +81,12 @@ class LoginViewController: UIViewController {
     func setAllText(){
         let userImage = UIImage(named: "user.pdf")
         let passwordImage = UIImage(named: "locked.pdf")
-        username.attributedPlaceholder = NSAttributedString(string: StaticStrings.username, attributes: [NSAttributedString.Key.foregroundColor: Colors().lightGray])
-        username.addLeftImage(userImage!)
-        password.attributedPlaceholder = NSAttributedString(string: StaticStrings.password, attributes: [NSAttributedString.Key.foregroundColor: Colors().lightGray])
-        password.addLeftImage(passwordImage!)
+        email.placeholder = StaticStrings.email
+        password.placeholder = StaticStrings.password
+        
+        email.setPadding()
+        password.setPadding()
+        password.isSecureTextEntry = true
         mainTitle.attributedText = Helpers().changeTextColor(StaticStrings.coachMe, "coach", "Me")
     }
     
@@ -64,7 +94,7 @@ class LoginViewController: UIViewController {
 
 extension UITextField{
     func setPadding(){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 25, height: self.frame.height))
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
         self.leftView = paddingView
         self.leftViewMode = .always
     }

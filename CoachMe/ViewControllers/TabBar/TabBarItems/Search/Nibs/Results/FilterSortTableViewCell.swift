@@ -14,7 +14,9 @@ class FilterSortTableViewCell: UITableViewCell {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var totalResults: UILabel!
     @IBOutlet weak var mentorType: UILabel!
-    
+    @IBOutlet weak var sortButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!
     
     
     

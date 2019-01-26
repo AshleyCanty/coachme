@@ -16,4 +16,5 @@ struct SearchResultsCard {
     var averageRating = ""
     var location = ""
     var lastActive = ""
+    var baseRate = ""
 }

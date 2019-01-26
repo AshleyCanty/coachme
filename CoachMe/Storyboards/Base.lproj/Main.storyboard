@@ -24,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="DHe-q1-NMb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -37,26 +37,28 @@
                                     <action selector="shortcut:" destination="NAX-tR-Lbr" eventType="touchUpInside" id="shx-Np-xJZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i1d-H9-Qdw" userLabel="Password">
+                            <textField opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="i1d-H9-Qdw" userLabel="Password">
                                 <rect key="frame" x="23" y="298" width="329" height="45"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Qtz-Zc-aww"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.46666666666666667" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="faz-Bf-KTJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email " minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="faz-Bf-KTJ">
                                 <rect key="frame" x="23" y="243" width="329" height="45"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Q3G-OA-Q47"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.46666666666666667" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -119,12 +121,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="yzW-JR-PR1"/>
                     <connections>
+                        <outlet property="email" destination="faz-Bf-KTJ" id="esZ-zR-K2N"/>
                         <outlet property="loginButton" destination="lTM-xQ-4L5" id="Qr2-nf-ptR"/>
                         <outlet property="logo" destination="RU5-qi-xn6" id="a4Y-4q-C3h"/>
                         <outlet property="mainTitle" destination="Fam-hH-GKX" id="sCS-cu-HJK"/>
                         <outlet property="password" destination="i1d-H9-Qdw" id="llx-Rl-wQu"/>
                         <outlet property="signupLink" destination="oea-WT-Bda" id="9Dm-zP-JaY"/>
-                        <outlet property="username" destination="faz-Bf-KTJ" id="0oD-Bq-tgn"/>
                         <segue destination="lSf-5s-Q0a" kind="show" id="gFI-7v-q3Q"/>
                     </connections>
                 </viewController>

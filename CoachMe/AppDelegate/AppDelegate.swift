@@ -17,16 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
+        let storyboard = UIStoryboard.init(name: "Authentication", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: vc)
+        application.statusBarStyle = .lightContent
         FirebaseApp.configure()
-        
+        setUINavigationBar()
+        return true
+    }
+    
+    func setUINavigationBar() {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().layer.shadowColor = UIColor.clear.cgColor
         UINavigationBar.appearance().shadowImage = UIImage()
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Colors().darkGreyBackground], for: .selected)
         UITabBar.appearance().backgroundColor = Colors().lightGreen
-        application.statusBarStyle = .lightContent
-        return true
     }
     
     func loginNavigation(_ controller: UINavigationController) {

@@ -106,10 +106,19 @@ extension AccountSettings {
             print("Nothing")
         case 0:
             print("delete")
-            if cardLimit > 0 {
-                StaticStrings.ServiceCard.removeLast()
+            
+            // if there already exists saved cards, confirm if user wants to delete them
+            if StaticStrings.ServiceCard.count != 0 {
+                let alert = UIAlertController(title: "Are you sure?", message: "You are about delete a service card.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Continue", style: .destructive, handler: { action in
+                    if self.cardLimit > 0 {
+                        StaticStrings.ServiceCard.removeLast()
+                    }
+                    self.loadServiceInfo()
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
-            loadServiceInfo()
         case 1:
             print("add")
             

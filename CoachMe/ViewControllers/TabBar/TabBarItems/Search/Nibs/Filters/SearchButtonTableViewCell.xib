@@ -12,47 +12,66 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchButtonTableViewCell" rowHeight="125" id="KGk-i7-Jjw" customClass="SearchButtonTableViewCell" customModule="CoachMe" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="125"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchButtonTableViewCell" rowHeight="136" id="KGk-i7-Jjw" customClass="SearchButtonTableViewCell" customModule="CoachMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="507" height="136"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="124.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="507" height="135.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FB-Ve-f4h">
-                        <rect key="frame" x="50" y="69.5" width="220" height="45"/>
-                        <color key="backgroundColor" red="0.0" green="0.80392156859999997" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="45" id="kPZ-yu-aBu"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <state key="normal" title="Search">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <integer key="value" value="8"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                        <connections>
-                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XHo-wc-MYK"/>
-                        </connections>
-                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ffY-wr-L1D">
+                        <rect key="frame" x="50" y="81" width="407" height="45"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FB-Ve-f4h">
+                                <rect key="frame" x="0.0" y="0.0" width="188.5" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.80392156859999997" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="kPZ-yu-aBu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XHo-wc-MYK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyL-6X-Wcg">
+                                <rect key="frame" x="218.5" y="0.0" width="188.5" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.80392156859999997" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="7FB-Ve-f4h" secondAttribute="bottom" constant="10" id="0jz-TU-W6F"/>
-                    <constraint firstItem="7FB-Ve-f4h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="aLN-7F-afq"/>
-                    <constraint firstAttribute="trailing" secondItem="7FB-Ve-f4h" secondAttribute="trailing" constant="50" id="ogc-V5-gdt"/>
-                    <constraint firstItem="7FB-Ve-f4h" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="s4s-O3-To3"/>
+                    <constraint firstAttribute="trailing" secondItem="ffY-wr-L1D" secondAttribute="trailing" constant="50" id="3QP-N9-EJL"/>
+                    <constraint firstItem="ffY-wr-L1D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="45q-JF-3c0"/>
+                    <constraint firstItem="ffY-wr-L1D" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="FwW-e4-ThZ"/>
+                    <constraint firstAttribute="bottom" secondItem="ffY-wr-L1D" secondAttribute="bottom" constant="9.5" id="wER-vJ-ILa"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cancelButton" destination="EyL-6X-Wcg" id="eIi-ii-3TF"/>
                 <outlet property="searchButton" destination="7FB-Ve-f4h" id="d4u-a1-PHM"/>
             </connections>
-            <point key="canvasLocation" x="81.599999999999994" y="173.16341829085459"/>
+            <point key="canvasLocation" x="231.19999999999999" y="178.11094452773614"/>
         </tableViewCell>
     </objects>
 </document>

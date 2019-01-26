@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptySearchScreenTableViewCell" rowHeight="431" id="KGk-i7-Jjw" customClass="EmptySearchScreenTableViewCell" customModule="CoachMe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="461" height="431"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="461" height="430.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="1XE-tu-PbP">
+                        <rect key="frame" x="20" y="0.0" width="421" height="431"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl4-Hq-bb5">
+                        <rect key="frame" x="0.0" y="0.0" width="461" height="431"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Inx-5e-muB">
+                                <rect key="frame" x="70.5" y="163.5" width="320" height="104"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See what opportunities await you!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syz-qV-0KR">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.24745920907079644" blue="0.22245845141724629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byq-Gs-ePh">
+                                        <rect key="frame" x="0.0" y="54" width="320" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.80392156859999997" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="W2v-tQ-uP7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Begin search">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.19848214285714286" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Inx-5e-muB" firstAttribute="centerX" secondItem="gl4-Hq-bb5" secondAttribute="centerX" id="WMp-sf-0rw"/>
+                            <constraint firstItem="Inx-5e-muB" firstAttribute="centerY" secondItem="gl4-Hq-bb5" secondAttribute="centerY" id="YQy-vF-J1L"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="1XE-tu-PbP" secondAttribute="trailing" id="BhE-XS-3Bm"/>
+                    <constraint firstItem="gl4-Hq-bb5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-20" id="PEi-oO-jrr"/>
+                    <constraint firstItem="1XE-tu-PbP" firstAttribute="height" secondItem="gl4-Hq-bb5" secondAttribute="height" id="Slf-ft-ch6"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gl4-Hq-bb5" secondAttribute="trailing" constant="-20" id="TdG-wJ-lca"/>
+                    <constraint firstItem="1XE-tu-PbP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XEy-CH-gXA"/>
+                    <constraint firstItem="1XE-tu-PbP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-11" id="Zld-dl-4Ba"/>
+                    <constraint firstItem="gl4-Hq-bb5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-11" id="bP2-Y8-ezg"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="gl4-Hq-bb5" secondAttribute="bottom" constant="-11" id="c3G-Ag-tK7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="beginSearch" destination="byq-Gs-ePh" id="FHh-o6-i0l"/>
+            </connections>
+            <point key="canvasLocation" x="-106.40000000000001" y="297.30134932533736"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sky" width="720" height="1080"/>
+    </resources>
+</document>
