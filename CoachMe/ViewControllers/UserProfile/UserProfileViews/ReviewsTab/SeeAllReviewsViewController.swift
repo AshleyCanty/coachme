@@ -18,9 +18,9 @@ class SeeAllReviewsViewController: UITableViewController {
     let nibReviews = UINib(nibName: "ReviewsTableViewCell", bundle: nil)
     
     var headlines = [
-        Headline(title: "About me", text: "first"),
-        Headline(title: "Joey Rockout", text: "second"),
-        Headline(title: "Photos", text: "third")
+        Headline(title: "About me", text: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, alitrud exercitation ullamco laboris nisi ut exercitation ullamco laborivghvvvvs nisi ut txercitation ullamco laboris nisi ut exercitation"),
+        Headline(title: "Joey Rockout", text: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, alitrud exercitation ullamco laboris nisi ut exercitation ullamco laborivghvvvvs nisi ut txercitation ullamco laboris nisi ut exercitation"),
+        Headline(title: "Photos", text: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, alitrud exercitation ullamco laboris nisi ut exercitation ullamco laborivghvvvvs nisi ut txercitation ullamco laboris nisi ut exercitation")
     ]
     
     override func viewDidLoad() {

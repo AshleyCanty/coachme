@@ -26,6 +26,9 @@
                             <color key="textColor" red="0.0" green="0.80392156859999997" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pKg-IM-8Nc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="YkY-Ll-1iD" kind="relationship" relationship="rootViewController" id="Hc7-RS-ke9"/>
                     </connections>
@@ -38,33 +41,19 @@
         <scene sceneID="Bej-1J-7Ci">
             <objects>
                 <viewController storyboardIdentifier="AccountSettings" id="YkY-Ll-1iD" customClass="AccountSettings" customModule="CoachMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NS1-AW-gqN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="O1K-xQ-Ir2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UVR-R6-5qd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="YkY-Ll-1iD" id="UWY-uR-pgQ"/>
-                                    <outlet property="delegate" destination="YkY-Ll-1iD" id="1bL-AH-3XK"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="UVR-R6-5qd" firstAttribute="trailing" secondItem="rZS-AA-wCD" secondAttribute="trailing" id="Kcr-r0-Bhz"/>
-                            <constraint firstItem="UVR-R6-5qd" firstAttribute="bottom" secondItem="rZS-AA-wCD" secondAttribute="bottom" id="LYI-Ea-J5d"/>
-                            <constraint firstItem="UVR-R6-5qd" firstAttribute="top" secondItem="rZS-AA-wCD" secondAttribute="top" id="Lmn-hh-MjJ"/>
-                            <constraint firstItem="UVR-R6-5qd" firstAttribute="leading" secondItem="rZS-AA-wCD" secondAttribute="leading" id="ncw-aY-Xln"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="rZS-AA-wCD"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="YkY-Ll-1iD" id="wjt-qh-AFj"/>
+                            <outlet property="delegate" destination="YkY-Ll-1iD" id="jxA-eQ-3Kb"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="z24-3N-VJy"/>
                     <connections>
-                        <outlet property="tableView" destination="UVR-R6-5qd" id="osB-sz-6gJ"/>
+                        <outlet property="tableView" destination="O1K-xQ-Ir2" id="beU-AI-plA"/>
                         <segue destination="UBW-uU-62e" kind="show" identifier="BasicInformationViewController" id="Xte-dS-agf"/>
                         <segue destination="UAz-Dq-4Ik" kind="show" identifier="ServicesInformationViewController" id="ciM-Xa-CyN"/>
                         <segue destination="ZqC-dE-FpG" kind="show" id="lw3-wo-HW9"/>

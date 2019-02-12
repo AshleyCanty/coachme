@@ -8,18 +8,15 @@
 
 import UIKit
 
-class PhotosTableViewCell: UITableViewCell {
+class PhotosTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewButton: UIButton!
-    @IBOutlet weak var imgOne: UIImageView!
-    @IBOutlet weak var imgTwo: UIImageView!
-    @IBOutlet weak var imgThree: UIImageView!
-    @IBOutlet weak var imgFour: UIImageView!
     @IBOutlet weak var view: UIView!
     
     var imgArray = [UIImage]()
     var xPositionArray = [CGFloat()]
-    let photosCellHeight = CGFloat(integerLiteral: 453)
+    let photosCellHeight = CGFloat(integerLiteral: 300)
     
     let scrollview: UIScrollView = {
         let scroll = UIScrollView()
@@ -29,6 +26,68 @@ class PhotosTableViewCell: UITableViewCell {
         scroll.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         return scroll
     }()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        collectionView.backgroundColor = UIColor(red: 6/255, green: 28/255, blue: 26/255, alpha: 1.0)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib.init(nibName: "GalleryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GalleryCollectionViewCell")
+        // Initialization code
+        addGestures()
+        imgArray = [UIImage(imageLiteralResourceName: "coach1"), UIImage(imageLiteralResourceName: "coach2"), UIImage(imageLiteralResourceName: "coach3")]
+        
+        customizeViewAllButton()
+        
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    func customizeViewAllButton(){
+        viewButton.layer.borderColor = Colors().lightGreen.cgColor
+        viewButton.layer.borderWidth = 1
+        viewButton.backgroundColor = UIColor.clear
+        viewButton.layer.cornerRadius = 15
+        
+//        viewButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 100, bottom: 10, right: 10)
+        let shadowView = UIView()
+        shadowView.layer.cornerRadius = 15
+        shadowView.frame = viewButton.frame
+        shadowView.backgroundColor = Colors().solidDarkBackgroundGreen
+        shadowView.addShadows()
+        viewButton.insertSubview(shadowView, at: 0)
+        
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width/2.5, height: collectionView.bounds.height-24)
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imgArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 2.5, bottom: 5, right: 2.5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 12.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCollectionViewCell", for: indexPath) as! GalleryCollectionViewCell
+        cell.imageBox.image = imgArray[indexPath.row]
+        return cell
+    }
     
     func setupImages(_ images: [UIImage],_ index: Int) {
         for i in 0..<images.count {
@@ -46,24 +105,6 @@ class PhotosTableViewCell: UITableViewCell {
         }
     }
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-        view.addShadows()
-        addGestures()
-        imgArray = [imgOne.image, imgTwo.image, imgThree.image, imgFour.image] as! [UIImage]
-//        imgArray = [UIImage(imageLiteralResourceName: "coach1"), UIImage(imageLiteralResourceName: "coach2"), UIImage(imageLiteralResourceName: "coach3")]
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     @IBAction func viewAll(_ sender: Any) {
         
     }
@@ -78,18 +119,18 @@ class PhotosTableViewCell: UITableViewCell {
         let tapFour = UITapGestureRecognizer(target: self, action: #selector(tappedImage(_:)))
         tapFour.delegate = self
         
-        imgOne.tag = 0
-        imgOne.isUserInteractionEnabled = true
-        imgOne.addGestureRecognizer(tapOne)
-        imgTwo.tag = 1
-        imgTwo.isUserInteractionEnabled = true
-        imgTwo.addGestureRecognizer(tapTwo)
-        imgThree.tag = 2
-        imgThree.isUserInteractionEnabled = true
-        imgThree.addGestureRecognizer(tapThree)
-        imgFour.tag = 3
-        imgFour.isUserInteractionEnabled = true
-        imgFour.addGestureRecognizer(tapFour)
+//        imgOne.tag = 0
+//        imgOne.isUserInteractionEnabled = true
+//        imgOne.addGestureRecognizer(tapOne)
+//        imgTwo.tag = 1
+//        imgTwo.isUserInteractionEnabled = true
+//        imgTwo.addGestureRecognizer(tapTwo)
+//        imgThree.tag = 2
+//        imgThree.isUserInteractionEnabled = true
+//        imgThree.addGestureRecognizer(tapThree)
+//        imgFour.tag = 3
+//        imgFour.isUserInteractionEnabled = true
+//        imgFour.addGestureRecognizer(tapFour)
     }
     
     

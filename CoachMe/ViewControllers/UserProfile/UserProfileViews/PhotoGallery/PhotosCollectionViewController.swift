@@ -44,7 +44,7 @@ class PhotosCollectionViewController: UICollectionViewController, UICollectionVi
             scrollview.contentSize.width = scrollview.frame.width * CGFloat(i+1)
             xPositionArray.append(xPosition)
             scrollview.addSubview(imageView)
-            scrollview.delegate = self as? UIScrollViewDelegate
+            scrollview.delegate = self as UIScrollViewDelegate
         }
     }
     
@@ -74,7 +74,7 @@ class PhotosCollectionViewController: UICollectionViewController, UICollectionVi
         sub.backgroundColor = UIColor.black
         UIApplication.shared.keyWindow?.addSubview(sub)
         sub.addSubview(scrollview)
-        if let imageView = sender as? UIButton {
+        if sender.isKind(of: UIButton.self) {
             let i = sender.tag
             let tap = UITapGestureRecognizer(target: self, action: #selector(dismissScreen))
             tap.delegate = self as? UIGestureRecognizerDelegate
@@ -114,40 +114,4 @@ class PhotosCollectionViewController: UICollectionViewController, UICollectionVi
         let itemWidth = Double(collectionView.bounds.width - layout.minimumLineSpacing)/numberOfItemsPerRow
         return CGSize(width: itemWidth, height: itemWidth)
     }
-    
-    
-    
-    
-    
-    // MARK: UICollectionViewDelegate
-    
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
-    
 }

@@ -12,6 +12,8 @@ import UIKit
 extension AccountSettings: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.backgroundColor = UIColor.clear
         if animationFlag {
             let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -10, 0)
             cell.layer.transform = rotationTransform
@@ -35,13 +37,10 @@ extension AccountSettings: UITableViewDelegate {
         let currentData = userDefaults.integer(forKey: "currentData")
         switch currentData {
         case 0:
-            print("settings menu")
             return getAccountSettingsCells(indexPath)
         case 1:
             return getBasicInfoCells(indexPath)
-            print("basic data")
         case 2:
-            print("services data")
             return getServiceInfoCells(indexPath)
         default:
             return getAccountSettingsCells(indexPath)
@@ -52,13 +51,10 @@ extension AccountSettings: UITableViewDelegate {
         let currentData = userDefaults.integer(forKey: "currentData")
         switch currentData {
         case 0:
-            print("settings menu")
             return 3
         case 1:
             return 4
-            print("basic data")
         case 2:
-            print("services data 4 cells")
             return StaticStrings.ServiceCard.count + 2
         default:
             return 3

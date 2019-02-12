@@ -87,6 +87,23 @@ extension UIApplication {
     }
 }
 
+extension UITableViewCell {
+    func setClearBackground() {
+        let bgView: UIView = UIView()
+        bgView.backgroundColor = UIColor.clear
+        
+        self.backgroundView = bgView
+        self.backgroundColor = UIColor.clear
+    }
+}
+
+extension UITextView {
+    func addTailAndCutLines (_ lineBreak: NSLineBreakMode, _ lines: Int) {
+        textContainer.lineBreakMode = lineBreak
+        textContainer.maximumNumberOfLines = lines
+    }
+}
+
 extension NSLayoutConstraint {
     func controlConstraints(_ constraints: [NSLayoutConstraint],_ status: [Bool]){
         let c = constraints.count-1
@@ -151,9 +168,10 @@ extension UIView {
         
         let shadowPath = UIBezierPath(rect: bounds)
         layer.masksToBounds = false
+        layer.shadowRadius = 12
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-        layer.shadowOpacity = 0.15
+        layer.shadowOpacity = 0.35
         layer.shadowPath = shadowPath.cgPath
     }
 }
@@ -219,6 +237,20 @@ extension UIImageView {
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath
         layer.mask = shape
+    }
+    
+    func makeRoundedUserProfileImage(){
+        layer.masksToBounds = false
+        layer.cornerRadius = frame.width/2
+        layer.masksToBounds = true
+    }
+}
+
+extension String {
+    func isEmailValid() -> Bool {
+        let emailReg = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format: "Self MATCHES%@", emailReg)
+        return emailTest.evaluate(with: self)
     }
 }
 

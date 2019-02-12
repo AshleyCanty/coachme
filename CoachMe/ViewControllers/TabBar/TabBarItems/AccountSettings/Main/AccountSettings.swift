@@ -18,13 +18,11 @@ class AccountSettings: UIViewController {
     let userDefaults = UserDefaults.standard
     let board = UIStoryboard(name: "AccountSettings", bundle: nil)
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundView = tableView.setGradientBackground(Colors().leftGradientColor, Colors().rightGradientColor)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         
         // 0 = main, 1 = basicInfo, 2 = services
         userDefaults.set(0, forKey: "currentData")

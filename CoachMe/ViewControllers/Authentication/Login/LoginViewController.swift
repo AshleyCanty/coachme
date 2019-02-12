@@ -9,8 +9,6 @@
 import UIKit
 import Firebase
 
-
-
 class LoginViewController: UIViewController {
 
     var titleTopAnchor: NSLayoutConstraint?
@@ -22,56 +20,41 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupLink: UIButton!
+    @IBOutlet weak var forgotPassword: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setAllText()
-        navigationController?.navigationBar.tintColor = Colors().lightGreen
-        UINavigationBar.appearance().barTintColor = Colors().darkGreyBackground
+        view.backgroundColor = UIColor.clear
+        view.insertSubview(view.setGradientBackground(Colors().leftGradientColor, Colors().rightGradientColor), at: 0)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.backgroundColor = Colors().solidDarkBackgroundGreen
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = Colors().solidDarkBackgroundGreen
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
-    
+
     
     @IBAction func shortcut(_ sender: Any) {
-        AppDelegate().loginNavigation(navigationController!)
         guard let email = email.text, let password = password.text else {
             print("Invalid input")
             return
         }
+        AppDelegate().loginNavigation(self.navigationController!)
         
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                print(error)
-                return
-            }
-            
-            guard let uid = user?.user.uid else {
-                return
-            }
-            
-            // Successfully authenticated user
-            let ref = Database.database().reference(fromURL: "https://coachme-c9e7e.firebaseio.com/")
-            let usersReference = ref.child("user").child(uid)
-            let values = ["email": email, "password": password]
-            usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+        if Auth.auth().currentUser != nil {
+            Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
                 if err != nil {
-                    print(err)
+                    print(err!)
                     return
                 }
-                print("Successfully saved user to Firebase DB")
-            })
+                
+                // otherwise successfully signed user in
+            }
+        } else {
+            // if current user is not nil then signout
+            try! Auth.auth().signOut()
         }
     }
-    
     
     @IBAction func startSignup(_ sender: Any) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "SignupOneViewController") as! SignupOneViewController
@@ -79,8 +62,8 @@ class LoginViewController: UIViewController {
     }
     
     func setAllText(){
-        let userImage = UIImage(named: "user.pdf")
-        let passwordImage = UIImage(named: "locked.pdf")
+//        let userImage = UIImage(named: "user.pdf")
+//        let passwordImage = UIImage(named: "locked.pdf")
         email.placeholder = StaticStrings.email
         password.placeholder = StaticStrings.password
         

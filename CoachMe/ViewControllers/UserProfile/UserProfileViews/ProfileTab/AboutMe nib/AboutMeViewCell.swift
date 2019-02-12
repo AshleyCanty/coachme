@@ -13,13 +13,13 @@ class AboutMeViewCell: UITableViewCell {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var view: UIView!
-    let aboutCellHeight = CGFloat(integerLiteral: 205)
+    let aboutCellHeight = CGFloat(integerLiteral: 150)
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print(view.bounds.height)
+        
+        label.textColor = Colors().darkerLabelGreen
         textView.isEditable = false
-        view.addShadows()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 import UIKit
 
 extension UserProfileViewController {
@@ -28,6 +29,46 @@ extension UserProfileViewController {
 //            cell.alpha = 1.0
 //        })
 //    }
+
+    func fetchUserFromDatabaseWithUid() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("Could not retrieve user.")
+            return
+        }
+        
+        print("MIGHT PRINT ERROR TRYING TO GET USER")
+        Database.database().reference().child("users").child(uid).observe(DataEventType.value) { (snapshot) in
+            print("----------------PRINTING SNAPSHOT----------------")
+            print(snapshot)
+            
+        }
+    }
+    
+    func getProfileImageUrl() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("failed to get info")
+            return
+        }
+        Database.database().reference().child("users").child(uid).observe(.value) { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                print(snapshot, "---------USING VALUE OBSERVER-------")
+//                self.user.setValuesForKeys(dictionary)
+                self.user.firstName = (dictionary["firstName"] as! String)
+                self.user.lastName = (dictionary["lastName"] as! String)
+                self.user.email = (dictionary["email"] as! String)
+                self.user.profileImageUrl = (dictionary["profileImageUrl"] as! String)
+                self.user.role = (dictionary["role"] as! String)
+                self.user.dateJoined = (dictionary["dateJoined"] as! String)
+                self.user.averageRating = (dictionary["dateJoined"] as! String)
+                // Use dispatch to run on background thread and prevent crashing
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        // dont return in closure becasue they are meant to be void, try again with a fresh mind
+    }
     
     func getProfileCells(_ indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
@@ -35,6 +76,27 @@ extension UserProfileViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserIntroTableViewCell", for: indexPath) as! UserIntroTableViewCell
             cell.separatorInset = UIEdgeInsets.zero
             cell.layoutMargins = UIEdgeInsets.zero
+            
+            
+            if let profileImageUrl = user.profileImageUrl {
+                cell.userImage.loadImageUsingCacheWithUrlString(profileImageUrl)
+                cell.imageBackground.loadImageUsingCacheWithUrlString(profileImageUrl)
+            }
+            
+            if let role = user.role {
+                cell.role.getColorOfUserRole(role)
+            }
+            
+            if let dateJoined = user.dateJoined {
+                cell.dateJoined.text = dateJoined
+                let date = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "MMMM yyyy"
+                let newdate = formatter.string(from: date)
+            }
+            if let name = user.firstName {
+                cell.username.text = name
+            }
             cell.profileBtn.tag = indexPath.row
             cell.profileBtn.addTarget(self, action: #selector(reloadTableData), for: .touchUpInside)
             cell.servicesBtn.tag = indexPath.row
@@ -48,7 +110,7 @@ extension UserProfileViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AboutMeViewCell", for: indexPath) as! AboutMeViewCell
             cell.separatorInset = UIEdgeInsets.zero
             cell.layoutMargins = UIEdgeInsets.zero
-            cell.label.text = StaticStrings.bio
+            cell.label.text = "About me"
             if StaticStrings.headlines[1].text != "" {
                 cell.textView.text = StaticStrings.headlines[1].text
             } else {
@@ -65,8 +127,8 @@ extension UserProfileViewController {
             let videoType = "youtube"
             switch videoType {
             case "youtube":
-                cell.webView.scrollView.layer.masksToBounds = true
-                cell.webView.scrollView.layer.cornerRadius = 8.0
+//                cell.webView.scrollView.layer.masksToBounds = true
+//                cell.webView.scrollView.layer.cornerRadius = 8.0
                 Helpers().createYoutubeVideo(cell.webView, videoCode)
             case "custom":
                 if (cell.webView != nil) {
@@ -83,9 +145,11 @@ extension UserProfileViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosTableViewCell", for: indexPath) as! PhotosTableViewCell
             cell.viewButton.addTarget(self, action: #selector(showPhotos), for: .touchUpInside)
+            
             return cell
         }
     }
+    
     
     func getServicesCells(_ indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
@@ -141,5 +205,15 @@ extension UserProfileViewController {
             cell.layoutMargins = UIEdgeInsets.zero
             return cell
         }
+    }
+}
+
+extension UILabel {
+    func getColorOfUserRole(_ str: String){
+        if str == "Mentor" {
+            backgroundColor = Colors().lightGreen
+            return
+        }
+        backgroundColor = Colors().orange
     }
 }

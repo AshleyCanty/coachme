@@ -9,7 +9,8 @@ target 'CoachMe' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
-    pod 'Cosmos'
-    pod 'TinyConstraints'
+	pod 'Firebase/Storage'
+    	pod 'Cosmos'
+    	pod 'TinyConstraints'
 
 end

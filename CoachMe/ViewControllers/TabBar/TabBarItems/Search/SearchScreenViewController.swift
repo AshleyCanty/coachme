@@ -17,7 +17,9 @@ class SearchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(segueToSearch), name: NSNotification.Name(rawValue: "load"), object: nil)
-//
+        
+        view.insertSubview(view.setGradientBackground(Colors().leftGradientColor, Colors().rightGradientColor), at: 0)
+        
 //        // 0 = emptyScreen, 1 = searchResults
         userDefaults.set(0, forKey: "searchScreen")
 

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="InboxTableViewCell" rowHeight="106" id="KGk-i7-Jjw" customClass="InboxTableViewCell" customModule="CoachMe" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="InboxTableViewCell" rowHeight="106" id="KGk-i7-Jjw" customClass="InboxTableViewCell" customModule="CoachMe" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -21,6 +21,7 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDE-Pc-Ex4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19:14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zC-t6-YAH">
                         <rect key="frame" x="330.5" y="15" width="32.5" height="16"/>
@@ -30,13 +31,13 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWk-UG-q7R">
                         <rect key="frame" x="334" y="47" width="26" height="26"/>
-                        <color key="backgroundColor" red="0.0" green="0.80392156859999997" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="26" id="LSD-eA-zil"/>
                             <constraint firstAttribute="height" constant="26" id="ODK-c4-jsc"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" red="1" green="0.45960768439999999" blue="0.13886029329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coach2" translatesAutoresizingMaskIntoConstraints="NO" id="Hee-vD-7H9">
@@ -45,23 +46,18 @@
                             <constraint firstAttribute="width" constant="70" id="MKW-zr-TUw"/>
                             <constraint firstAttribute="height" constant="70" id="UVj-sM-zid"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <integer key="value" value="8"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="09d-lJ-yoC">
-                        <rect key="frame" x="90" y="26.5" width="230" height="52.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="09d-lJ-yoC">
+                        <rect key="frame" x="92" y="24" width="228" height="57.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chipmunk Squirrel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5z-Ul-l55">
-                                <rect key="frame" x="0.0" y="0.0" width="230" height="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="228" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In a week or so, when im back lets meet." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdW-XF-gp8">
-                                <rect key="frame" x="0.0" y="21" width="230" height="31.5"/>
+                                <rect key="frame" x="0.0" y="26" width="228" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -70,7 +66,7 @@
                         <viewLayoutGuide key="safeArea" id="kaW-sO-xHA"/>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Hee-vD-7H9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7g3-hz-NhW"/>
                     <constraint firstItem="mWk-UG-q7R" firstAttribute="centerX" secondItem="3zC-t6-YAH" secondAttribute="centerX" id="G20-MY-GnH"/>
@@ -83,13 +79,13 @@
                     <constraint firstItem="qDE-Pc-Ex4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bUr-fb-BfP"/>
                     <constraint firstItem="3zC-t6-YAH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="bf4-rn-NKs"/>
                     <constraint firstAttribute="trailing" secondItem="qDE-Pc-Ex4" secondAttribute="trailing" id="p4h-P5-kKw"/>
-                    <constraint firstItem="09d-lJ-yoC" firstAttribute="leading" secondItem="Hee-vD-7H9" secondAttribute="trailing" constant="8" id="tyk-vp-MkD"/>
+                    <constraint firstItem="09d-lJ-yoC" firstAttribute="leading" secondItem="Hee-vD-7H9" secondAttribute="trailing" constant="10" id="tyk-vp-MkD"/>
                     <constraint firstAttribute="bottom" secondItem="qDE-Pc-Ex4" secondAttribute="bottom" id="xje-xg-hDd"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <inset key="separatorInset" minX="91" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="clearButton" destination="qDE-Pc-Ex4" id="V5c-Ci-YLg"/>
                 <outlet property="message" destination="RdW-XF-gp8" id="R0j-Ag-EKZ"/>
@@ -98,10 +94,10 @@
                 <outlet property="userImage" destination="Hee-vD-7H9" id="3nw-fy-Iej"/>
                 <outlet property="username" destination="i5z-Ul-l55" id="osi-tc-2MT"/>
             </connections>
-            <point key="canvasLocation" x="688.79999999999995" y="576.61169415292363"/>
+            <point key="canvasLocation" x="246" y="553"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="coach2" width="580" height="440"/>
+        <image name="coach2" width="290" height="220"/>
     </resources>
 </document>

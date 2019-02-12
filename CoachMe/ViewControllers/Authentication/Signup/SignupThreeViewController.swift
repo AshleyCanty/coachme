@@ -1,73 +1,166 @@
 //
-//  SignupThreeViewController.swift
+//  SignUpThreeViewController.swift
 //  CoachMe
 //
-//  Created by ashley canty on 12/5/18.
-//  Copyright © 2018 ashley canty. All rights reserved.
+//  Created by ashley canty on 2/12/19.
+//  Copyright © 2019 ashley canty. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-class SignupThreeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    @IBOutlet weak var confirmPassword: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var username: UITextField!
-    @IBOutlet weak var circleImage: UIImageView!
+class SignUpThreeViewController: UIViewController {
+    
+    @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var zipcode: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var state: UITextField!
+    @IBOutlet weak var containerView: UIView!
+    var user = User()
+    var userImage: UIImage?
     
     override func viewDidLoad() {
+        customizeFinishButton()
+            view.backgroundColor = UIColor.clear
+        view.insertSubview(view.setGradientBackground(Colors().leftGradientColor, Colors().rightGradientColor), at: 0)
         super.viewDidLoad()
-        print(StaticStrings.headlines.count)
-        username.layer.borderColor = UIColor.clear.cgColor
-        password.layer.borderColor = UIColor.clear.cgColor
-        confirmPassword.layer.borderColor = UIColor.clear.cgColor
+
+        // Do any additional setup after loading the view.
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-    }
-    
-    
-    @IBAction func register(_ sender: Any) {
-        AppDelegate().loginNavigation(navigationController!)
-    }
-    
-    @IBAction func addImage(_ sender: Any) {
+    @IBAction func completeSignup(){
+        AppDelegate().loginNavigation(self.navigationController!)
         
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.allowsEditing = true
-        
-        let actionSheet = UIAlertController(title: "Photo source", message: "Choose a source", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action:UIAlertAction) in
+    }
+    
+    func loadZipcode() {
+        if let zipcode = zipcode.text {
             
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                imagePickerController.sourceType = .camera
-                self.present(imagePickerController, animated: true, completion: nil)
-            } else {
-                print("Camera not available")
-                let alert = UIAlertController(title: "No Camera", message: "No camera was found", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+            // Use google geo location to confirm
+            
+            // if successful
+            // call ----> locationSuccessfullyLoaded()
+            
+            
+            // if failed, present alert
+            // call ----> failedToFindZipcode()
+        }
+    }
+    
+    func loadCityState() {
+        if let city = city.text, let state = state.text {
+            
+            // Use google geo location to confirm
+            
+            
+            // if successful
+            // call ----> locationSuccessfullyLoaded()
+            
+            
+            // if failed, present alert
+            // call ----> failedToFindCityState()
+            
+        }
+    }
+    
+    func locationSuccessfullyLoaded() -> Bool {
+        
+        let flag = Bool()
+        // confirm with with IBDesignable -- func task!
+        // need to confirm locations so that the
+        // data can be stored in the database under the registering user
+        
+        return flag
+    }
+    
+    func failedToFindZipcode() {
+        let alert = UIAlertController(title: "Failed attempt", message: "We failed to verify the zipcode. Please enter a valid zipcode.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Okay", style: .default) { (UIAlertAction) in
+            self.zipcode.text = ""
+            self.city.text = ""
+            self.state.text = ""
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func failedToFindCityState() {
+        let alert = UIAlertController(title: "Failed attempt", message: "We failed to verify the city and state. Please enter valid information.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Okay", style: .default) { (UIAlertAction) in
+            self.zipcode.text = ""
+            self.city.text = ""
+            self.state.text = ""
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func customizeFinishButton(){
+        finishButton.layer.borderColor = Colors().lightGreen.cgColor
+        finishButton.layer.borderWidth = 1
+        finishButton.backgroundColor = UIColor.clear
+        finishButton.layer.cornerRadius = 15
+    }
+    
+    func createUser() {
+        view.addSubview(SignUpThreeViewController.displaySpinner(onView: view))
+        
+        guard let firstName = user.firstName, let lastName = user.lastName, let email = user.email, let password = user.password, let role = user.role else {
+            print("Invalid input")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            guard let uid = user?.user.uid else {
+                return
             }
             
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction) in
-            imagePickerController.sourceType = .photoLibrary
-            self.present(imagePickerController, animated: true, completion: nil)
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        present(actionSheet, animated: true, completion: nil)
+            // Successfully authenticated user
+            let imageName = NSUUID().uuidString
+            let storageRef = Storage.storage().reference(withPath: "gs://coachme-c9e7e.appspot.com/gs://gameofchat-61fd8.appspot.com/").child("_images").child("\(imageName).jpg")
+            if let image = self.userImage, let uploadData = image.jpegData(compressionQuality: 0.1) {
+                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, err) in
+                    if err != nil {
+                        print(err!)
+                        return
+                    }
+                    
+                    
+                    //---------TODO---------//
+                    let location = ""
+                    var dateJoined = ""
+                    let averageRating = "0"
+                    let totalRatings = "0"
+                    let bio = ""
+                    
+                    
+                    let now = Date()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "MMMM yyyy"
+                    dateFormatter.timeZone = NSTimeZone(name: "UTC")! as TimeZone
+                    let MonthAndYear = dateFormatter.string(from: now)
+                    
+                    dateJoined = MonthAndYear
+                    
+                    storageRef.downloadURL(completion: { (url, err) in
+                        let values = ["firstName": firstName,"lastName": lastName, "email": email, "profileImageUrl": url!.absoluteString, "role": role, "dateJoined": dateJoined, "bio": bio, "totalRatings": totalRatings,"averageRating": averageRating, "location": location]
+                        if CoachMeWebServices().registerUserIntoDatabaseWithUID(uid, values) == true {
+                            SignUpThreeViewController.removeSpinner(spinner: self.view)
+                            //            AppDelegate().loginNavigation(self.navigationController!)
+                        } else {
+                            let alert = UIAlertController(title: "Registration failed.", message: "There was an error storing your information.", preferredStyle: .alert)
+                            let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                            alert.addAction(action)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    })
+                })
+            }
+        }
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        circleImage.image = image
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
+
 }

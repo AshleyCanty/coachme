@@ -21,20 +21,20 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTr-RZ-Va6">
                         <rect key="frame" x="182" y="10" width="104" height="18"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                         <state key="normal" title="See all reviews">
-                            <color key="titleColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" red="0.18963003158569336" green="0.74734324216842651" blue="0.69171476364135742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                 </subviews>
-                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="hTr-RZ-Va6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6.9100000000000001" id="UGJ-zW-o1B"/>
                     <constraint firstItem="hTr-RZ-Va6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="s1f-ZO-Vyp"/>
                     <constraint firstAttribute="trailing" secondItem="hTr-RZ-Va6" secondAttribute="trailing" id="xAM-up-VJn"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="seeAllReviewsButton" destination="hTr-RZ-Va6" id="fDa-kT-iuX"/>

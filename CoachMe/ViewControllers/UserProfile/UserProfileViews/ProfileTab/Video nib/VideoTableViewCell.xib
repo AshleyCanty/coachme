@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UL-rk-Da4">
-                        <rect key="frame" x="12" y="45" width="408" height="192.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="432" height="249.5"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <wkWebViewConfiguration key="configuration">
                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -32,22 +32,14 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </wkWebView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zge-kA-tK9">
-                        <rect key="frame" x="12" y="12" width="408" height="21"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="6UL-rk-Da4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="0Pe-YI-AbU"/>
-                    <constraint firstItem="6UL-rk-Da4" firstAttribute="top" secondItem="zge-kA-tK9" secondAttribute="bottom" constant="12" id="B3J-X0-0eR"/>
-                    <constraint firstAttribute="trailing" secondItem="zge-kA-tK9" secondAttribute="trailing" constant="12" id="Ir9-5O-apT"/>
-                    <constraint firstItem="zge-kA-tK9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="ObF-kC-NLu"/>
-                    <constraint firstItem="zge-kA-tK9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="lY7-Z3-Mxh"/>
-                    <constraint firstAttribute="bottom" secondItem="6UL-rk-Da4" secondAttribute="bottom" constant="12" id="ldD-8f-YOk"/>
-                    <constraint firstAttribute="trailing" secondItem="6UL-rk-Da4" secondAttribute="trailing" constant="12" id="xVT-iV-lwq"/>
+                    <constraint firstItem="6UL-rk-Da4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PRk-6O-kyd"/>
+                    <constraint firstAttribute="trailing" secondItem="6UL-rk-Da4" secondAttribute="trailing" id="THf-LC-ix0"/>
+                    <constraint firstItem="6UL-rk-Da4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jzn-xZ-aDS"/>
+                    <constraint firstAttribute="bottom" secondItem="6UL-rk-Da4" secondAttribute="bottom" id="lBX-HN-QCW"/>
+                    <constraint firstItem="6UL-rk-Da4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mBd-Sz-rYT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

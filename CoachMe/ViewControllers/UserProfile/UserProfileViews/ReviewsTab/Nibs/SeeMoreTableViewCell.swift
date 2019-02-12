@@ -16,6 +16,7 @@ class SeeMoreTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        accessoryView = UIImageView.init(image: UIImage(named: "right-arrow"))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

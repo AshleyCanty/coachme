@@ -30,11 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setUINavigationBar() {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().layer.shadowColor = UIColor.clear.cgColor
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Colors().darkGreyBackground], for: .selected)
-        UITabBar.appearance().backgroundColor = Colors().lightGreen
     }
     
     func loginNavigation(_ controller: UINavigationController) {

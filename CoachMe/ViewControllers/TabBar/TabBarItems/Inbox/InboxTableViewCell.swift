@@ -19,6 +19,9 @@ class InboxTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        userImage.layer.cornerRadius = 35
+        userImage.clipsToBounds = true
+        userImage.layer.masksToBounds = true
         
         messageCounter.layer.cornerRadius = (messageCounter.frame.width/2)
         messageCounter.clipsToBounds = true

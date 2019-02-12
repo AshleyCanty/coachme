@@ -13,6 +13,7 @@ class ReviewsTableViewCell: UITableViewCell, UITextViewDelegate {
 
     
     @IBOutlet weak var cosmosStars: CosmosView!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var reviewImage: UIButton!
     @IBOutlet weak var date: UILabel!
@@ -38,12 +39,24 @@ class ReviewsTableViewCell: UITableViewCell, UITextViewDelegate {
    
     override func awakeFromNib() {
         super.awakeFromNib()
-        view.addShadows()
+        reviewText.isUserInteractionEnabled = false
+        containerView.addShadows()
+        containerView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        containerView.layer.shadowOpacity = 0.4
+        view.layer.cornerRadius = 6
+        view.layer.masksToBounds = true
+        view.backgroundColor = UIColor.clear
+        view.insertSubview(view.setGradientBackground(Colors().leftGradientColor, Colors().leftGradientColor.withAlphaComponent(0.70)), at: 0)
+        
+//        view.backgroundColor = UIColor.init(white: 255, alpha: 0.20)
         reviewImage.roundedButton([.allCorners])
+        reviewText.addTailAndCutLines(.byTruncatingTail, 4)
         reviewText.delegate = self as UITextViewDelegate
+        date.textColor = Colors().dateTextLightGreen.withAlphaComponent(0.7)
         cosmosStars.rating = rating
         cosmosStars.isUserInteractionEnabled = false
         setInfo()
+        
     }
     
     func textViewDidChange(_ textView: UITextView){

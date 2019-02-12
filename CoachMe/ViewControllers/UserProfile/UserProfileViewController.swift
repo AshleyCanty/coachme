@@ -11,6 +11,7 @@ import AVKit
 import WebKit
 import Cosmos
 import TinyConstraints
+import Firebase
 
 class UserProfileViewController: UIViewController  {
     
@@ -21,11 +22,13 @@ class UserProfileViewController: UIViewController  {
 //    var videoCode = "PJvOR4ue3tU"
     var videoCode = "yvw8WtSKmZw"
     var headlines = [
-        Headline(title: "About me", text: "first"),
-        Headline(title: "Joey Rockout", text: "second"),
-        Headline(title: "Photos", text: "third")
+        Headline(title: "About me", text: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, alitrud exercitation ullamco laboris nisi ut exercitation ullamco laborivghvvvvs nisi ut txercitation ullamco laboris nisi ut exercitation"),
+        Headline(title: "Joey Rockout", text: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, alitrud exercitation ullamco laboris nisi ut exercitation ullamco laborivghvvvvs nisi ut txercitation ullamco laboris nisi ut exercitation"),
+        Headline(title: "Photos", text: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, alitrud exercitation ullamco laboris nisi ut exercitation ullamco laborivghvvvvs nisi ut txercitation ullamco laboris nisi ut exercitation")
     ]
     var animationFlag = true
+    let user = User()
+//    var users = [User]()
     let reviewView = AddReviewView()
     let userDefaults = UserDefaults.standard
     
@@ -37,23 +40,91 @@ class UserProfileViewController: UIViewController  {
             setTableView()
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = NavigationTitles.Profile
-//        navigationItem.hidesBackButton = true
+//        self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
+//        self.extendedLayoutIncludesOpaqueBars = false
+//        tableView.contentInsetAdjustmentBehavior = .never
+        
+        tableView.backgroundView = setGradientBackground(Colors().leftGradientColor, Colors().rightGradientColor)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)
         userDefaults.set("profile", forKey: "tab")
         reviewView.textbox.delegate = self as UITextViewDelegate
         reviewView.submitBtn.addTarget(self, action: #selector(submitReviewsClicked), for: .touchUpInside)
         
+        
+//        fetchUser()
+//        fetchUserFromDatabaseWithUid()
+        getProfileImageUrl()
+        checkIfUserIsLoggedIn()
 //        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 75, right: 0)
 //        tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 75, right: 0)
     }
     
-    @objc func showPhotos(){
+    
+    func setGradientBackground(_ colorOne: UIColor, _ colorTwo: UIColor) -> UIView {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = tableView.bounds
+        gradientLayer.colors = [colorTwo.cgColor, colorOne.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
+        
+        let backgroundView = UIView(frame: tableView.bounds)
+        backgroundView.layer.insertSublayer(gradientLayer, at: 0)
+        return backgroundView
+    }
+    
+    func handleLogout() {
+        do {
+            try Auth.auth().signOut()            
+        } catch let logoutError {
+            print(logoutError)
+        }
+        
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func checkIfUserIsLoggedIn(){
+        if Auth.auth().currentUser?.uid != nil {
+            print("YES----------------")
+            print(Auth.auth().currentUser?.email, "----------------")
+            print(Auth.auth().currentUser?.uid, "---------FIRST-------")
+            fetchUserAndSetupNavBarTitle()
+        } else {
+            print("NO")
+            handleLogout()
+        }
+    }
+    func fetchUserAndSetupNavBarTitle() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("Could not retrieve user.")
+            return
+        }
+        
+        Database.database().reference().child("users").child(uid).observe(.value) { (snapshot) in
+            print(uid, "---------SECOND-------")
+            print(snapshot)
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let user = User()
+                user.firstName = (dictionary["firstName"] as? String)
+                user.lastName = (dictionary["lastName"] as? String)
+                user.email = (dictionary["email"] as? String)
+                user.profileImageUrl = (dictionary["profileImageUrl"] as? String)
+                
+                self.setupNavBarWithUser(user)
+            }
+        }
+    }
+    
+    func setupNavBarWithUser(_ user: User){
+        let titleView = UIView()
+        navigationController?.navigationBar.topItem?.title = user.firstName
+    }
+    
+    @objc func showPhotos() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PhotosCollectionViewController") as! PhotosCollectionViewController
         navigationController?.pushViewController(vc, animated: true)
     }

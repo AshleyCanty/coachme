@@ -12,6 +12,9 @@ import UIKit
 extension UserProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+        cell.setClearBackground()
+        
         if animationFlag == true {
             let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -10, 0)
             cell.layer.transform = rotationTransform
@@ -42,6 +45,8 @@ extension UserProfileViewController: UITableViewDelegate {
             return 1
         }
     }
+    
+    
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
