@@ -19,18 +19,35 @@ class SignUpThreeViewController: UIViewController {
     var user = User()
     var userImage: UIImage?
     
+    
+    let spinner = UIActivityIndicatorView(style: .whiteLarge)
+    var spinnerView: UIView!
+    
     override func viewDidLoad() {
         customizeFinishButton()
-            view.backgroundColor = UIColor.clear
+        view.backgroundColor = UIColor.clear
         view.insertSubview(view.setGradientBackground(Colors().leftGradientColor, Colors().rightGradientColor), at: 0)
+        setupSpinner()
+        
+        print(user.email, user.userId, user.firstName)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func completeSignup(){
+        createUser()
         AppDelegate().loginNavigation(self.navigationController!)
         
+    }
+    
+    func setupSpinner() {
+        spinnerView = UIView.init(frame: view.frame)
+        spinnerView.backgroundColor = UIColor(red: 177/255, green: 177/255, blue: 177/255, alpha: 0.6)
+        spinnerView.addSubview(spinner)
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        spinner.center = view.center
     }
     
     func loadZipcode() {
@@ -102,17 +119,48 @@ class SignUpThreeViewController: UIViewController {
         finishButton.layer.cornerRadius = 15
     }
     
+    func registerUserIntoDatabaseWithUID(_ uid: String,_ values: [String: String]) {
+        let ref = Database.database().reference(fromURL: "https://coachme-c9e7e.firebaseio.com/")
+        let usersReference = ref.child("users").child(uid)
+        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            if err != nil {
+                let alert = UIAlertController(title: "Registration failed.", message: err!.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                    DispatchQueue.main.async {
+                        self.spinnerView.removeFromSuperview()
+                    }
+                })
+                return
+            }
+            DispatchQueue.main.async {
+                self.spinnerView.removeFromSuperview()
+            }
+            print("Successfully saved user to Firebase DB")
+            AppDelegate().loginNavigation(self.navigationController!)
+            
+        })
+    }
+    
     func createUser() {
-        view.addSubview(SignUpThreeViewController.displaySpinner(onView: view))
-        
-        guard let firstName = user.firstName, let lastName = user.lastName, let email = user.email, let password = user.password, let role = user.role else {
+        view.addSubview(spinnerView)
+        guard let userImage = userImage, let firstName = user.firstName, let lastName = user.lastName, let userId = user.userId, let email = user.email, let password = user.password, let role = user.role else {
             print("Invalid input")
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if error != nil {
-                print(error!)
+        Auth.auth().createUser(withEmail: email, password: password) { (user, err) in
+            if err != nil {
+                print(err!)
+                let alert = UIAlertController(title: "Registration failed.", message: err!.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                    DispatchQueue.main.async {
+                        self.spinnerView.removeFromSuperview()
+                    }
+                })
                 return
             }
             guard let uid = user?.user.uid else {
@@ -121,7 +169,7 @@ class SignUpThreeViewController: UIViewController {
             
             // Successfully authenticated user
             let imageName = NSUUID().uuidString
-            let storageRef = Storage.storage().reference(withPath: "gs://coachme-c9e7e.appspot.com/gs://gameofchat-61fd8.appspot.com/").child("_images").child("\(imageName).jpg")
+            let storageRef = Storage.storage().reference(withPath: "gs://coachme-c9e7e.appspot.com/").child("_images").child("\(imageName).jpg")
             if let image = self.userImage, let uploadData = image.jpegData(compressionQuality: 0.1) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, err) in
                     if err != nil {
@@ -131,32 +179,25 @@ class SignUpThreeViewController: UIViewController {
                     
                     
                     //---------TODO---------//
-                    let location = ""
-                    var dateJoined = ""
                     let averageRating = "0"
                     let totalRatings = "0"
+                    let location = ""
                     let bio = ""
-                    
-                    
+                    var dateJoined = ""
+                    var userId = ""
+      
+
                     let now = Date()
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MMMM yyyy"
                     dateFormatter.timeZone = NSTimeZone(name: "UTC")! as TimeZone
-                    let MonthAndYear = dateFormatter.string(from: now)
                     
+                    let MonthAndYear = dateFormatter.string(from: now)
                     dateJoined = MonthAndYear
                     
                     storageRef.downloadURL(completion: { (url, err) in
-                        let values = ["firstName": firstName,"lastName": lastName, "email": email, "profileImageUrl": url!.absoluteString, "role": role, "dateJoined": dateJoined, "bio": bio, "totalRatings": totalRatings,"averageRating": averageRating, "location": location]
-                        if CoachMeWebServices().registerUserIntoDatabaseWithUID(uid, values) == true {
-                            SignUpThreeViewController.removeSpinner(spinner: self.view)
-                            //            AppDelegate().loginNavigation(self.navigationController!)
-                        } else {
-                            let alert = UIAlertController(title: "Registration failed.", message: "There was an error storing your information.", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
-                            alert.addAction(action)
-                            self.present(alert, animated: true, completion: nil)
-                        }
+                        let values = ["firstName": firstName,"lastName": lastName, "userId": userId, "email": email, "profileImageUrl": url!.absoluteString, "role": role, "dateJoined": dateJoined, "bio": bio, "totalRatings": totalRatings,"averageRating": averageRating, "location": location]
+                        self.registerUserIntoDatabaseWithUID(uid, values)
                     })
                 })
             }

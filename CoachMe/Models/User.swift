@@ -13,6 +13,7 @@ import UIKit
 @objcMembers class User: NSObject {
     var firstName: String?
     var lastName: String?
+    var userId: String?
     var password: String?
     var email: String?
     var profileImageUrl: String?

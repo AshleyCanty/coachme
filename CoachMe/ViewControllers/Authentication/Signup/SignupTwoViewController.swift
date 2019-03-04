@@ -18,10 +18,12 @@ class SignupTwoViewController: UIViewController {
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var cameraImage: UIImageView!
     
-    
     var selectedRole: String?
     var firstName: String?
     var lastName: String?
+    var socialUserId: String = ""
+    var socialEmail: String = ""
+    
     lazy var backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
@@ -30,17 +32,33 @@ class SignupTwoViewController: UIViewController {
         return view
     }()
     
+    
+    let spinner = UIActivityIndicatorView(style: .whiteLarge)
+    var spinnerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setText()
-        self.title = "Basic Information"
+        setupSpinner()
+        self.title = "Registration"
         view.backgroundColor = UIColor.clear
         cameraImage.layer.cornerRadius = cameraImage.frame.width/2
         cameraImage.layer.masksToBounds = true
         view.insertSubview(view.setGradientBackground(Colors().leftGradientColor, Colors().rightGradientColor), at: 0)
+        
+        
         navigationController?.navigationBar.backItem?.backBarButtonItem?.tintColor = UIColor.white
+        
     }
     
+    func setupSpinner() {
+        spinnerView = UIView.init(frame: view.frame)
+        spinnerView.backgroundColor = UIColor(red: 177/255, green: 177/255, blue: 177/255, alpha: 0.6)
+        spinnerView.addSubview(spinner)
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        spinner.center = view.center
+    }
     
     @IBAction func handleSelectProfileImageView() {
         let picker = UIImagePickerController()
@@ -51,17 +69,17 @@ class SignupTwoViewController: UIViewController {
     
     @IBAction func verifyTextFieldsAndBeginRegistration(_ sender: Any) {
         guard let email = email.text, let password = password.text, let confirmPassword = confirmPassword.text else {
-            print("Invalid input")
+            print("Invalid input when verifying")
             return
         }
         
         var emptyField = ""
         
         if email.isEmpty {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpThreeViewController") as! SignUpThreeViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-//            emptyField = "email"
-//            emptyTextFieldAlert(emptyField)
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpThreeViewController") as! SignUpThreeViewController
+//            self.navigationController?.pushViewController(vc, animated: true)
+            emptyField = "email"
+            emptyTextFieldAlert(emptyField)
         } else if email.isEmailValid() == false {
             InvalidEmailAlert()
         } else if password.isEmpty {
@@ -73,15 +91,23 @@ class SignupTwoViewController: UIViewController {
         } else if password != confirmPassword {
             matchPasswordsAlert()
         } else {
+//            createUser()
             let vc = storyboard?.instantiateViewController(withIdentifier: "SignUpThreeViewController") as! SignUpThreeViewController
             vc.user.firstName = firstName
             vc.user.lastName = lastName
             vc.user.role = selectedRole
-            vc.user.email = email
             vc.user.password = password
-            vc.userImage = userImage.image 
-            navigationController?.pushViewController(vc, animated: true)
+            vc.userImage = userImage.image
             
+            if socialUserId != "" && socialEmail != "" {
+                vc.user.userId = socialUserId
+                vc.user.email = socialEmail
+            } else {
+                vc.user.email = email
+                vc.user.userId = NSUUID().uuidString
+            }
+            
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

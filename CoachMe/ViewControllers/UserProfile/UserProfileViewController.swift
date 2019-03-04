@@ -89,12 +89,8 @@ class UserProfileViewController: UIViewController  {
     
     func checkIfUserIsLoggedIn(){
         if Auth.auth().currentUser?.uid != nil {
-            print("YES----------------")
-            print(Auth.auth().currentUser?.email, "----------------")
-            print(Auth.auth().currentUser?.uid, "---------FIRST-------")
             fetchUserAndSetupNavBarTitle()
         } else {
-            print("NO")
             handleLogout()
         }
     }
@@ -105,8 +101,6 @@ class UserProfileViewController: UIViewController  {
         }
         
         Database.database().reference().child("users").child(uid).observe(.value) { (snapshot) in
-            print(uid, "---------SECOND-------")
-            print(snapshot)
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let user = User()
                 user.firstName = (dictionary["firstName"] as? String)

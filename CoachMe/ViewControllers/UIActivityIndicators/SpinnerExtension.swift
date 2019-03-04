@@ -15,6 +15,7 @@ extension UIViewController {
         spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         let ai = UIActivityIndicatorView.init(style: .whiteLarge)
         ai.startAnimating()
+        ai.hidesWhenStopped = true
         ai.center = spinnerView.center
         
         DispatchQueue.main.async {

@@ -38,7 +38,6 @@ extension UserProfileViewController {
         
         print("MIGHT PRINT ERROR TRYING TO GET USER")
         Database.database().reference().child("users").child(uid).observe(DataEventType.value) { (snapshot) in
-            print("----------------PRINTING SNAPSHOT----------------")
             print(snapshot)
             
         }
@@ -52,8 +51,8 @@ extension UserProfileViewController {
         Database.database().reference().child("users").child(uid).observe(.value) { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
-                print(snapshot, "---------USING VALUE OBSERVER-------")
 //                self.user.setValuesForKeys(dictionary)
+                print(dictionary)
                 self.user.firstName = (dictionary["firstName"] as! String)
                 self.user.lastName = (dictionary["lastName"] as! String)
                 self.user.email = (dictionary["email"] as! String)
